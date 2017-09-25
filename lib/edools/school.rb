@@ -26,5 +26,12 @@ module Edools
     def self.base_url
       "#{Edools.base_url}/schools"
     end
+
+    def set_as_global_environment
+      return false if subdomain.nil? || credentials.nil?
+
+      Edools.subdomain = subdomain
+      Edools.api_token = credentials
+    end
   end
 end

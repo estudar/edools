@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Edools::ApiRequest do
-  describe '#headers' do
+  describe '.headers' do
     let(:headers) { Edools::ApiRequest.headers }
 
     it 'has all required headers' do
@@ -11,7 +11,7 @@ RSpec.describe Edools::ApiRequest do
     end
   end
 
-  describe '#build_request' do
+  describe '.build_request' do
     let(:build_request) { Edools::ApiRequest.build_request(:post, 'https://google.com', {}) }
 
     it 'has all required keys' do
@@ -23,7 +23,7 @@ RSpec.describe Edools::ApiRequest do
     end
   end
 
-  describe '#handle_response' do
+  describe '.handle_response' do
     context 'when valid json response' do
       it 'returns parsed json'
     end
@@ -33,7 +33,7 @@ RSpec.describe Edools::ApiRequest do
     end
   end
 
-  describe '#request' do
+  describe '.request' do
     it 'returns parsed response.body json'
   end
 end
