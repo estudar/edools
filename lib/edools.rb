@@ -1,13 +1,32 @@
 # frozen_string_literal: true
 
+require 'dotenv/load'
 require 'edools/version'
+require 'edools/utils'
+require 'edools/school'
+require 'edools/api_request'
 
 module Edools
-  class << self
-    attr_accessor :api_token
+  class RequestFailed < StandardError
   end
 
-  def self.base_uri
-    'https://core.myedools.info/'
+  class RequestWithErrors < StandardError
+    attr_accessor :errors
+
+    def initialize(errors)
+      @errors = errors
+    end
+  end
+
+  class << self
+    attr_accessor :api_token, :subdomain
+    attr_reader :api_version
+  end
+
+  @api_version = 'v1'
+  @subdomain = 'core'
+
+  def self.base_url
+    "https://#{@subdomain}.myedools.info"
   end
 end

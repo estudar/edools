@@ -13,7 +13,7 @@ RSpec.describe Edools do
     expect(Edools.api_token).to eq '1234'
   end
 
-  it 'has a base_uri' do
-    expect(Edools.base_uri).to eq 'https://core.myedools.info/'
+  it 'has a base_url' do
+    expect(Edools.base_url).to eq 'https://core.myedools.info'
   end
 end
