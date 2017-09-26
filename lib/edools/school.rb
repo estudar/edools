@@ -15,15 +15,15 @@ module Edools
     def self.create(data = {})
       url = "#{base_url}/wizard"
       new Edools::ApiRequest.request(:post, url, school: data)
-    rescue Edools::RequestWithErrors => exception
+    rescue RequestWithErrors => exception
       new exception.errors
     end
 
     def self.update(data = {})
-      # raise ArgumentError, 'missing id' unless data.key? :id
+      raise ArgumentError, 'missing id' unless data.key? :id
 
-      # url = "#{base_url}/#{data[:id]}"
-      # new Edools::ApiRequest.request(:put, url, school: data)
+      url = "#{base_url}/#{data[:id]}"
+      Edools::ApiRequest.request(:patch, url, school: data)
     end
 
     def self.base_url

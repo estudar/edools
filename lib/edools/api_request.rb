@@ -8,13 +8,17 @@ module Edools
     def self.request(method, url, data = {})
       Edools::Utils.api_token_from_env if Edools.api_token.nil?
       handle_response RestClient::Request.execute(build_request(method, url, data))
-    rescue RestClient::BadRequest => exception
+    rescue RestClient::BadRequest
       raise BadRequest
+    rescue RestClient::NotFound
+      raise NotFound
     rescue RestClient::UnprocessableEntity => exception
       raise RequestWithErrors, JSON.parse(exception.response, symbolize_names: true)
     end
 
     def self.handle_response(response)
+      return true if response.body.to_s.empty?
+
       JSON.parse(response.body, symbolize_names: true)
     rescue JSON::ParserError
       raise RequestFailed
