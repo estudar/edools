@@ -3,11 +3,15 @@
 require 'dotenv/load'
 require 'edools/version'
 require 'edools/utils'
-require 'edools/school'
 require 'edools/api_request'
+require 'edools/school'
+require 'edools/course'
 
 module Edools
   class RequestFailed < StandardError
+  end
+
+  class BadRequest < StandardError
   end
 
   class RequestWithErrors < StandardError
@@ -19,14 +23,13 @@ module Edools
   end
 
   class << self
-    attr_accessor :api_token, :subdomain
+    attr_accessor :api_token
     attr_reader :api_version
   end
 
   @api_version = 'v1'
-  @subdomain = 'core'
 
   def self.base_url
-    "https://#{@subdomain}.myedools.info"
+    'https://core.myedools.info'
   end
 end

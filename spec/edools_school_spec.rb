@@ -30,7 +30,6 @@ RSpec.describe Edools::School do
         school.set_as_global_environment
 
         expect(Edools.api_token).to eq school.credentials
-        expect(Edools.subdomain).to eq school.subdomain
       end
     end
   end

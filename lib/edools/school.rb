@@ -19,8 +19,11 @@ module Edools
       new exception.errors
     end
 
-    def self.update
-      # TODO
+    def self.update(data = {})
+      # raise ArgumentError, 'missing id' unless data.key? :id
+
+      # url = "#{base_url}/#{data[:id]}"
+      # new Edools::ApiRequest.request(:put, url, school: data)
     end
 
     def self.base_url
@@ -28,10 +31,10 @@ module Edools
     end
 
     def set_as_global_environment
-      return false if subdomain.nil? || credentials.nil?
+      return false if credentials.nil?
 
-      Edools.subdomain = subdomain
       Edools.api_token = credentials
+      true
     end
   end
 end

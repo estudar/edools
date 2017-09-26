@@ -8,7 +8,9 @@ module Edools
     def self.request(method, url, data = {})
       Edools::Utils.api_token_from_env if Edools.api_token.nil?
       handle_response RestClient::Request.execute(build_request(method, url, data))
-    rescue RestClient::BadRequest, RestClient::UnprocessableEntity => exception
+    rescue RestClient::BadRequest => exception
+      raise BadRequest
+    rescue RestClient::UnprocessableEntity => exception
       raise RequestWithErrors, JSON.parse(exception.response, symbolize_names: true)
     end
 
