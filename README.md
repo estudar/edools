@@ -53,7 +53,7 @@ Edools::Course.all
 ### SchoolProduct example
 
 ```ruby
-Edools::SchoolProduct.create(name: 'My Product')
+Edools::SchoolProduct.create(school_id: 1, title: 'My Product')
 
 Edools::SchoolProduct.all
 ```

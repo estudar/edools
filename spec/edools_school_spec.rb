@@ -28,19 +28,31 @@ RSpec.describe Edools::School do
   describe '.update' do
     context 'when valid params' do
       it 'succeeds' do
-        expect(Edools::School.update id: school.id).to be true
+        preserving_environment do
+          school.set_as_global_environment
+
+          expect(Edools::School.update(id: school.id)).to be true
+        end
       end
     end
 
     context 'when school doesn\'t exist' do
       it 'raises Edools::NotFound' do
-        expect{ Edools::School.update id: 'test' }.to raise_error Edools::NotFound
+        preserving_environment do
+          school.set_as_global_environment
+
+          expect { Edools::School.update id: 'test' }.to raise_error Edools::NotFound
+        end
       end
     end
 
     context 'when without params' do
       it 'raises ArgumentError' do
-        expect { Edools::School.update }.to raise_error ArgumentError
+        preserving_environment do
+          school.set_as_global_environment
+
+          expect { Edools::School.update }.to raise_error ArgumentError
+        end
       end
     end
   end

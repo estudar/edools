@@ -8,6 +8,7 @@ module Edools
     def self.request(method, url, data = {})
       Edools::Utils.api_token_from_env if Edools.api_token.nil?
       raise AuthenticationException, 'You must set the API Token before using the gem' if Edools.api_token.nil?
+
       handle_response send_request(method, url, data)
     end
 
