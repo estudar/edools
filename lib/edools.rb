@@ -17,6 +17,9 @@ module Edools
   class NotFound < StandardError
   end
 
+  class AuthenticationException < StandardError
+  end
+
   class RequestWithErrors < StandardError
     attr_accessor :errors
 

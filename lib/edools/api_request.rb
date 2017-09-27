@@ -7,7 +7,12 @@ module Edools
   class ApiRequest
     def self.request(method, url, data = {})
       Edools::Utils.api_token_from_env if Edools.api_token.nil?
-      handle_response RestClient::Request.execute(build_request(method, url, data))
+      raise AuthenticationException, 'You must set the API Token before using the gem' if Edools.api_token.nil?
+      handle_response send_request(method, url, data)
+    end
+
+    def self.send_request(method, url, data)
+      RestClient::Request.execute(build_request(method, url, data))
     rescue RestClient::BadRequest
       raise BadRequest
     rescue RestClient::NotFound
