@@ -1,8 +1,6 @@
 # Edools
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/edools`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a basic gem to interact with the [Edools API](http://docs.edools.com/api/).
 
 ## Installation
 
@@ -20,19 +18,49 @@ Or install it yourself as:
 
     $ gem install edools
 
+## Configuration
+
+In order to work properly the gem needs an API Token, you could either set it manually:
+
+```ruby
+Edools.api_token = 'YOUR_API_TOKEN'
+```
+
+or let the gem automatically load it from the environment. Just make sure you've set the variable correctly:
+
+```ruby
+ENV['EDOOLS_API_TOKEN'] = 'YOUR_API_TOKEN'
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+### School example
 
-## Development
+```ruby
+Edools::School.create(name: 'My School', email: 'my@school.com', password: '********')
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Edools::School.update(id: 1, name: 'Other School')
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### Course example
+
+```ruby
+Edools::Course.create(name: 'My Course')
+
+Edools::Course.all
+```
+
+### SchoolProduct example
+
+```ruby
+Edools::SchoolProduct.create(name: 'My Product')
+
+Edools::SchoolProduct.all
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/edools. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
