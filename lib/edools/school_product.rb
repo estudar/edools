@@ -22,7 +22,6 @@ module Edools
       new exception.errors
     end
 
-    # TODO: Paginate
     def self.all
       url = "#{Edools.base_url}/school_products"
       response = Edools::ApiRequest.request(:get, url)

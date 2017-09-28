@@ -49,8 +49,11 @@ RSpec.describe Edools::Course do
   describe '.all' do
     let(:all) { Edools::Course.all }
 
-    it 'return an array' do
-      expect(all).to be_instance_of Array
+    it 'returns an array' do
+      preserving_environment do
+        school.set_as_global_environment
+        expect(all).to be_instance_of Array
+      end
     end
   end
 end

@@ -8,9 +8,10 @@ RSpec.describe Edools do
   end
 
   it 'sets the api_token' do
-    Edools.api_token = '1234'
-
-    expect(Edools.api_token).to eq '1234'
+    preserving_environment do
+      Edools.api_token = '1234'
+      expect(Edools.api_token).to eq '1234'
+    end
   end
 
   it 'has a base_url' do

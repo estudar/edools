@@ -21,7 +21,6 @@ module Edools
       new exception.errors
     end
 
-    # TODO: Paginate
     def self.all
       response = Edools::ApiRequest.request(:get, base_url)
       response[:courses].map { |course| new course }

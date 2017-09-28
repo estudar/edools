@@ -37,7 +37,7 @@ ENV['EDOOLS_API_TOKEN'] = 'YOUR_API_TOKEN'
 ### School example
 
 ```ruby
-Edools::School.create(name: 'My School', email: 'my@school.com', password: '********')
+Edools::School.create(name: 'My School', email: 'my@school.com', password: '******')
 
 Edools::School.update(id: 1, name: 'Other School')
 ```
@@ -56,6 +56,20 @@ Edools::Course.all
 Edools::SchoolProduct.create(school_id: 1, title: 'My Product')
 
 Edools::SchoolProduct.all
+```
+
+### Invitation example
+
+```ruby
+Edools::Invitation.create(first_name: 'Student', email: 'email@student.com', password: '******', password_confirmation: '******')
+```
+
+### Student example
+
+```ruby
+Edools::Student.all
+
+Edools::Student.all(school_product_id: 1)
 ```
 
 ## Contributing

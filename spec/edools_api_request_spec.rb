@@ -22,18 +22,4 @@ RSpec.describe Edools::ApiRequest do
       expect(build_request.fetch(:payload)).to include multipart: true
     end
   end
-
-  describe '.handle_response' do
-    context 'when valid json response' do
-      it 'returns parsed json'
-    end
-
-    context 'when invalid json response' do
-      it 'raises RequestFailed'
-    end
-  end
-
-  describe '.request' do
-    it 'returns parsed response.body json'
-  end
 end
