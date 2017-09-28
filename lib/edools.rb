@@ -7,6 +7,7 @@ require 'edools/api_request'
 require 'edools/school'
 require 'edools/course'
 require 'edools/school_product'
+require 'edools/invitation'
 
 module Edools
   class RequestFailed < StandardError
