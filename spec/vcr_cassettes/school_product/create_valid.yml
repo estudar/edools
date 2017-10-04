@@ -5,10 +5,10 @@ http_interactions:
     uri: https://core.myedools.info/schools/wizard
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundaryEa0XF7qRzAHQmi72\r\nContent-Disposition: form-data;
-        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryEa0XF7qRzAHQmi72\r\nContent-Disposition:
-        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundaryEa0XF7qRzAHQmi72\r\nContent-Disposition:
-        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundaryEa0XF7qRzAHQmi72--\r\n"
+      string: "------RubyFormBoundary8ZYW8vfYypTa4MUB\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundary8ZYW8vfYypTa4MUB\r\nContent-Disposition:
+        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundary8ZYW8vfYypTa4MUB\r\nContent-Disposition:
+        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundary8ZYW8vfYypTa4MUB--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -21,7 +21,7 @@ http_interactions:
       Content-Length:
       - '363'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundaryEa0XF7qRzAHQmi72
+      - multipart/form-data; boundary=----RubyFormBoundary8ZYW8vfYypTa4MUB
       Host:
       - core.myedools.info
   response:
@@ -39,11 +39,11 @@ http_interactions:
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Date:
-      - Wed, 04 Oct 2017 00:37:16 GMT
+      - Wed, 04 Oct 2017 00:46:58 GMT
       Etag:
-      - W/"7bc4f2d9ae55e60108c01f647db0e468"
+      - W/"527c5f60eb37bc0853eca621e384da2f"
       Location:
-      - https://core.myedools.info/schools/1267
+      - https://core.myedools.info/schools/1293
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -61,9 +61,9 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - 68432bec-770e-4de8-aedc-57944dd693a0
+      - 67655d20-7153-46a1-900d-14cdef346982
       X-Runtime:
-      - '1.772052'
+      - '1.741245'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -72,17 +72,17 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"school":{"id":1267,"subdomain":"test-1df7","name":"Test"},"library":{"id":1267},"organization":{"id":1261,"name":"Test"},"admin":{"id":591523,"full_name":"Test","email":"test@test.com","credentials":"f7bc10d847ab89f226563301d5b987f3:b27ab45627c3655413433d8484ff0f21","role_id":16653},"forum":{"id":1267}}'
+      string: '{"school":{"id":1293,"subdomain":"test-6564","name":"Test"},"library":{"id":1293},"organization":{"id":1287,"name":"Test"},"admin":{"id":591576,"full_name":"Test","email":"test@test.com","credentials":"7f25c39b6f59ce148659dae2b21a5367:85ea570a6124dfcb93bc965ac3fc087f","role_id":16965},"forum":{"id":1293}}'
     http_version: 
-  recorded_at: Wed, 04 Oct 2017 00:37:16 GMT
+  recorded_at: Wed, 04 Oct 2017 00:46:58 GMT
 - request:
     method: post
-    uri: https://core.myedools.info/schools/1267/school_products
+    uri: https://core.myedools.info/schools/1293/school_products
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundary6mzOkKnMCE1EALCb\r\nContent-Disposition: form-data;
-        name=\"school_product[title]\"\r\n\r\nTest\r\n------RubyFormBoundary6mzOkKnMCE1EALCb\r\nContent-Disposition:
-        form-data; name=\"school_product[school_id]\"\r\n\r\n1267\r\n------RubyFormBoundary6mzOkKnMCE1EALCb--\r\n"
+      string: "------RubyFormBoundaryBb4hKDnh6BYHBcof\r\nContent-Disposition: form-data;
+        name=\"school_product[title]\"\r\n\r\nTest\r\n------RubyFormBoundaryBb4hKDnh6BYHBcof\r\nContent-Disposition:
+        form-data; name=\"school_product[school_id]\"\r\n\r\n1293\r\n------RubyFormBoundaryBb4hKDnh6BYHBcof--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -91,11 +91,11 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
       Authorization:
-      - Token token="f7bc10d847ab89f226563301d5b987f3:b27ab45627c3655413433d8484ff0f21"
+      - Token token="7f25c39b6f59ce148659dae2b21a5367:85ea570a6124dfcb93bc965ac3fc087f"
       Content-Length:
       - '266'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundary6mzOkKnMCE1EALCb
+      - multipart/form-data; boundary=----RubyFormBoundaryBb4hKDnh6BYHBcof
       Host:
       - core.myedools.info
   response:
@@ -113,11 +113,11 @@ http_interactions:
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Date:
-      - Wed, 04 Oct 2017 00:37:17 GMT
+      - Wed, 04 Oct 2017 00:46:59 GMT
       Etag:
-      - W/"ab2dee8bdd3540a6986c82af2a194dd0"
+      - W/"57855d21ccbdbbe1d991f6036132d118"
       Location:
-      - https://core.myedools.info/school_products/22875
+      - https://core.myedools.info/school_products/22876
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -135,9 +135,9 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - 6a2ed983-6de8-482b-9635-795e66d3feba
+      - 229e00c1-2c3b-461d-985d-802a36384e91
       X-Runtime:
-      - '0.147139'
+      - '0.154974'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -146,7 +146,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":22875,"title":"Test","subtitle":null,"description":null,"logo":null,"video_url":null,"video_title":null,"video_description":null,"published":false,"hidden":false,"restricted":false,"allowed_emails":[],"expire_date":null,"available_time_type":"indeterminate","available_time_length":null,"available_time_unit":null,"certification":false,"certification_min_progress":null,"meta_title":null,"meta_description":null,"meta_keys":null,"classes_auto_generation":false,"max_attendance_type":"indeterminate","max_attendance_length":null,"forum_section_ids":[],"slug":"test","trial_constrains":{},"syllabus":null,"infos_propagate_to_clones":["school_product","school_product_topic","school_product/payment_option","gallery_media"],"payment_options":[],"gallery_media":[],"school_product_topics":[],"categories":[],"class_teachers":[],"library_resource":null,"created_at":"2017-10-04T00:37:17.112Z","updated_at":"2017-10-04T00:37:17.148Z"}'
+      string: '{"id":22876,"title":"Test","subtitle":null,"description":null,"logo":null,"video_url":null,"video_title":null,"video_description":null,"published":false,"hidden":false,"restricted":false,"allowed_emails":[],"expire_date":null,"available_time_type":"indeterminate","available_time_length":null,"available_time_unit":null,"certification":false,"certification_min_progress":null,"meta_title":null,"meta_description":null,"meta_keys":null,"classes_auto_generation":false,"max_attendance_type":"indeterminate","max_attendance_length":null,"forum_section_ids":[],"slug":"test","trial_constrains":{},"syllabus":null,"infos_propagate_to_clones":["school_product","school_product_topic","school_product/payment_option","gallery_media"],"payment_options":[],"gallery_media":[],"school_product_topics":[],"categories":[],"class_teachers":[],"library_resource":null,"created_at":"2017-10-04T00:46:59.532Z","updated_at":"2017-10-04T00:46:59.568Z"}'
     http_version: 
-  recorded_at: Wed, 04 Oct 2017 00:37:17 GMT
+  recorded_at: Wed, 04 Oct 2017 00:46:59 GMT
 recorded_with: VCR 3.0.3

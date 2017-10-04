@@ -5,8 +5,8 @@ http_interactions:
     uri: https://core.myedools.info/schools/wizard
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundaryZfMWUu7v4GVhRFA9\r\nContent-Disposition: form-data;
-        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryZfMWUu7v4GVhRFA9--\r\n"
+      string: "------RubyFormBoundaryH9vvmWeesIBCBPIp\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryH9vvmWeesIBCBPIp--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -19,7 +19,7 @@ http_interactions:
       Content-Length:
       - '143'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundaryZfMWUu7v4GVhRFA9
+      - multipart/form-data; boundary=----RubyFormBoundaryH9vvmWeesIBCBPIp
       Host:
       - core.myedools.info
   response:
@@ -37,7 +37,7 @@ http_interactions:
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Date:
-      - Wed, 04 Oct 2017 00:39:40 GMT
+      - Wed, 04 Oct 2017 00:47:22 GMT
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -55,9 +55,9 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - 299f4d81-b717-4282-8944-015cb08d266e
+      - c2dae04c-b984-431c-895a-230a743e8e01
       X-Runtime:
-      - '0.021742'
+      - '0.020688'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -69,5 +69,5 @@ http_interactions:
       string: !binary |-
         eyJlcnJvcnMiOnsiZW1haWwiOlsibsOjbyBwb2RlIGZpY2FyIGVtIGJyYW5jbyIsIm7Do28gw6kgdsOhbGlkbyJdLCJwYXNzd29yZCI6WyLDqSBtdWl0byBjdXJ0byAobcOtbmltbzogNiBjYXJhY3RlcmVzKSJdfX0=
     http_version: 
-  recorded_at: Wed, 04 Oct 2017 00:39:40 GMT
+  recorded_at: Wed, 04 Oct 2017 00:47:22 GMT
 recorded_with: VCR 3.0.3

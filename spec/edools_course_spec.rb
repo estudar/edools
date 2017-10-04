@@ -10,10 +10,8 @@ RSpec.describe Edools::Course do
     context 'when valid params' do
       it 'returns an instance of Edools::Course' do
         VCR.use_cassette('course/create_valid') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect(course).to be_an_instance_of Edools::Course
-          end
+          school.set_as_global_environment
+          expect(course).to be_an_instance_of Edools::Course
         end
       end
     end
@@ -23,19 +21,15 @@ RSpec.describe Edools::Course do
 
       it 'returns an instance of Edools::Course' do
         VCR.use_cassette('course/create_invalid_instance') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect(course).to be_an_instance_of Edools::Course
-          end
+          school.set_as_global_environment
+          expect(course).to be_an_instance_of Edools::Course
         end
       end
 
       it 'has errors' do
         VCR.use_cassette('course/create_invalid_errors') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect(course.errors).not_to be_empty
-          end
+          school.set_as_global_environment
+          expect(course.errors).not_to be_empty
         end
       end
     end
@@ -45,10 +39,8 @@ RSpec.describe Edools::Course do
 
       it 'raises Edools::BadRequest' do
         VCR.use_cassette('course/create_no_params_bad_request') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect { course }.to raise_error Edools::BadRequest
-          end
+          school.set_as_global_environment
+          expect { course }.to raise_error Edools::BadRequest
         end
       end
     end
@@ -59,10 +51,8 @@ RSpec.describe Edools::Course do
 
     it 'returns an array' do
       VCR.use_cassette('course/all') do
-        preserving_environment do
-          school.set_as_global_environment
-          expect(all).to be_instance_of Array
-        end
+        school.set_as_global_environment
+        expect(all).to be_instance_of Array
       end
     end
   end

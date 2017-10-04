@@ -10,10 +10,8 @@ RSpec.describe Edools::User do
 
     it 'returns an array' do
       VCR.use_cassette('user/all') do
-        preserving_environment do
-          school.set_as_global_environment
-          expect(all).to be_instance_of Array
-        end
+        school.set_as_global_environment
+        expect(all).to be_instance_of Array
       end
     end
   end

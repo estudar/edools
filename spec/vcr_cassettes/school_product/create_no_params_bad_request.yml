@@ -5,10 +5,10 @@ http_interactions:
     uri: https://core.myedools.info/schools/wizard
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundarysdkxD7lB0l5TPWx3\r\nContent-Disposition: form-data;
-        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundarysdkxD7lB0l5TPWx3\r\nContent-Disposition:
-        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundarysdkxD7lB0l5TPWx3\r\nContent-Disposition:
-        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundarysdkxD7lB0l5TPWx3--\r\n"
+      string: "------RubyFormBoundary6wedNfk7I9jz7sSv\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundary6wedNfk7I9jz7sSv\r\nContent-Disposition:
+        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundary6wedNfk7I9jz7sSv\r\nContent-Disposition:
+        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundary6wedNfk7I9jz7sSv--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -21,7 +21,7 @@ http_interactions:
       Content-Length:
       - '363'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundarysdkxD7lB0l5TPWx3
+      - multipart/form-data; boundary=----RubyFormBoundary6wedNfk7I9jz7sSv
       Host:
       - core.myedools.info
   response:
@@ -39,11 +39,11 @@ http_interactions:
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Date:
-      - Wed, 04 Oct 2017 00:37:29 GMT
+      - Wed, 04 Oct 2017 00:47:12 GMT
       Etag:
-      - W/"bc35ecd670f9d08244178565e2add65e"
+      - W/"983888e6f6931e307530905fd7506e4a"
       Location:
-      - https://core.myedools.info/schools/1270
+      - https://core.myedools.info/schools/1296
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -61,9 +61,9 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - 6e23b348-07d2-4147-a86b-3833bbedeeed
+      - 7e1e3ac8-63e1-4950-91c7-2364606da8d2
       X-Runtime:
-      - '2.393655'
+      - '2.190646'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -72,7 +72,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"school":{"id":1270,"subdomain":"test-ec9b","name":"Test"},"library":{"id":1270},"organization":{"id":1264,"name":"Test"},"admin":{"id":591529,"full_name":"Test","email":"test@test.com","credentials":"b74359f67b1089b7c332840ff44cec54:7f756de6cbb5cec4abb3b78c17bac2a8","role_id":16689},"forum":{"id":1270}}'
+      string: '{"school":{"id":1296,"subdomain":"test-45d1","name":"Test"},"library":{"id":1296},"organization":{"id":1290,"name":"Test"},"admin":{"id":591582,"full_name":"Test","email":"test@test.com","credentials":"bf2325a440a207711f824e7748d3bb53:df2cf114a3f1f023ee24bb2dd6e1a74e","role_id":17001},"forum":{"id":1296}}'
     http_version: 
-  recorded_at: Wed, 04 Oct 2017 00:37:29 GMT
+  recorded_at: Wed, 04 Oct 2017 00:47:12 GMT
 recorded_with: VCR 3.0.3

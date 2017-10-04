@@ -10,10 +10,8 @@ RSpec.describe Edools::Invitation do
     context 'when valid params' do
       it 'returns an instance of Edools::Invitation' do
         VCR.use_cassette('invitation/create_valid') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect(invitation).to be_an_instance_of Edools::Invitation
-          end
+          school.set_as_global_environment
+          expect(invitation).to be_an_instance_of Edools::Invitation
         end
       end
     end
@@ -23,19 +21,15 @@ RSpec.describe Edools::Invitation do
 
       it 'returns an instance of Edools::Invitation' do
         VCR.use_cassette('invitation/create_invalid_instance') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect(invitation).to be_an_instance_of Edools::Invitation
-          end
+          school.set_as_global_environment
+          expect(invitation).to be_an_instance_of Edools::Invitation
         end
       end
 
       it 'has errors' do
         VCR.use_cassette('invitation/create_invalid_errors') do
-          preserving_environment do
-            school.set_as_global_environment
-            expect(invitation.errors).not_to be_empty
-          end
+          school.set_as_global_environment
+          expect(invitation.errors).not_to be_empty
         end
       end
     end
@@ -46,10 +40,8 @@ RSpec.describe Edools::Invitation do
     #   let(:invitation) { Edools::Invitation.create }
 
     #   it 'raises Edools::BadRequest' do
-    #     preserving_environment do
-    #       school.set_as_global_environment
-    #       expect { invitation }.to raise_error Edools::BadRequest
-    #     end
+    #     school.set_as_global_environment
+    #     expect { invitation }.to raise_error Edools::BadRequest
     #   end
     # end
   end

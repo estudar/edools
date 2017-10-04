@@ -5,10 +5,10 @@ http_interactions:
     uri: https://core.myedools.info/schools/wizard
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundaryYAtuA8IqEjrZ7JRm\r\nContent-Disposition: form-data;
-        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryYAtuA8IqEjrZ7JRm\r\nContent-Disposition:
-        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundaryYAtuA8IqEjrZ7JRm\r\nContent-Disposition:
-        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundaryYAtuA8IqEjrZ7JRm--\r\n"
+      string: "------RubyFormBoundaryUIhKkAbUN83BFPvk\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryUIhKkAbUN83BFPvk\r\nContent-Disposition:
+        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundaryUIhKkAbUN83BFPvk\r\nContent-Disposition:
+        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundaryUIhKkAbUN83BFPvk--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -21,7 +21,7 @@ http_interactions:
       Content-Length:
       - '363'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundaryYAtuA8IqEjrZ7JRm
+      - multipart/form-data; boundary=----RubyFormBoundaryUIhKkAbUN83BFPvk
       Host:
       - core.myedools.info
   response:
@@ -39,11 +39,11 @@ http_interactions:
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Date:
-      - Wed, 04 Oct 2017 00:35:34 GMT
+      - Wed, 04 Oct 2017 00:46:54 GMT
       Etag:
-      - W/"91c2c714722407c1a496c199c46394ba"
+      - W/"eba1a2eace4a6266f8e53b674da2ed2a"
       Location:
-      - https://core.myedools.info/schools/1264
+      - https://core.myedools.info/schools/1292
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -61,9 +61,9 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - d85ba10f-f7cf-4ffb-b597-b02da4ab7da5
+      - 87f37ac0-223c-4a82-bc42-c54db34c88cd
       X-Runtime:
-      - '1.778278'
+      - '1.611901'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -72,16 +72,16 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"school":{"id":1264,"subdomain":"test-437e","name":"Test"},"library":{"id":1264},"organization":{"id":1258,"name":"Test"},"admin":{"id":591517,"full_name":"Test","email":"test@test.com","credentials":"826d0b7d0e7ae28ea22c6d06dbf7c39e:8fcffb13dccc1a14fc15695631319bde","role_id":16617},"forum":{"id":1264}}'
+      string: '{"school":{"id":1292,"subdomain":"test-ac9f","name":"Test"},"library":{"id":1292},"organization":{"id":1286,"name":"Test"},"admin":{"id":591574,"full_name":"Test","email":"test@test.com","credentials":"6c6bbb6b6be6e96addb681ff1ad19b53:669f59c947a68714948f8e0806a16a32","role_id":16953},"forum":{"id":1292}}'
     http_version: 
-  recorded_at: Wed, 04 Oct 2017 00:35:34 GMT
+  recorded_at: Wed, 04 Oct 2017 00:46:54 GMT
 - request:
     method: post
     uri: https://core.myedools.info/invitations
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundaryB0pEqmONghQAV91Q\r\nContent-Disposition: form-data;
-        name=\"invitation[foo]\"\r\n\r\n1\r\n------RubyFormBoundaryB0pEqmONghQAV91Q--\r\n"
+      string: "------RubyFormBoundaryfn7NLKpkdS0aqc6O\r\nContent-Disposition: form-data;
+        name=\"invitation[foo]\"\r\n\r\n1\r\n------RubyFormBoundaryfn7NLKpkdS0aqc6O--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -90,11 +90,11 @@ http_interactions:
       User-Agent:
       - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
       Authorization:
-      - Token token="826d0b7d0e7ae28ea22c6d06dbf7c39e:8fcffb13dccc1a14fc15695631319bde"
+      - Token token="6c6bbb6b6be6e96addb681ff1ad19b53:669f59c947a68714948f8e0806a16a32"
       Content-Length:
       - '143'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundaryB0pEqmONghQAV91Q
+      - multipart/form-data; boundary=----RubyFormBoundaryfn7NLKpkdS0aqc6O
       Host:
       - core.myedools.info
   response:
@@ -112,7 +112,7 @@ http_interactions:
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Date:
-      - Wed, 04 Oct 2017 00:35:35 GMT
+      - Wed, 04 Oct 2017 00:46:55 GMT
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -130,9 +130,9 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - ced6974d-b872-4c6d-8dec-8b73201b4ba8
+      - f24d1be5-500b-4132-89c0-10e02259f10f
       X-Runtime:
-      - '0.046695'
+      - '0.054529'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
@@ -144,5 +144,5 @@ http_interactions:
       string: !binary |-
         eyJlcnJvcnMiOnsiZmlyc3RfbmFtZSI6WyJuw6NvIHBvZGUgZmljYXIgZW0gYnJhbmNvIiwiw6kgbXVpdG8gY3VydG8gKG3DrW5pbW86IDIgY2FyYWN0ZXJlcykiXSwiZW1haWwiOlsibsOjbyBwb2RlIGZpY2FyIGVtIGJyYW5jbyIsIm7Do28gw6kgdsOhbGlkbyJdfX0=
     http_version: 
-  recorded_at: Wed, 04 Oct 2017 00:35:35 GMT
+  recorded_at: Wed, 04 Oct 2017 00:46:55 GMT
 recorded_with: VCR 3.0.3

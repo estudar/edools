@@ -35,11 +35,9 @@ RSpec.describe Edools::School do
     context 'when valid params' do
       it 'succeeds' do
         VCR.use_cassette('school/update_valid') do
-          preserving_environment do
-            school.set_as_global_environment
+          school.set_as_global_environment
 
-            expect(Edools::School.update(id: school.id)).to be true
-          end
+          expect(Edools::School.update(id: school.id)).to be true
         end
       end
     end
@@ -47,11 +45,9 @@ RSpec.describe Edools::School do
     context 'when school doesn\'t exist' do
       it 'raises Edools::NotFound' do
         VCR.use_cassette('school/update_not_found') do
-          preserving_environment do
-            school.set_as_global_environment
+          school.set_as_global_environment
 
-            expect { Edools::School.update id: 'test' }.to raise_error Edools::NotFound
-          end
+          expect { Edools::School.update id: 'test' }.to raise_error Edools::NotFound
         end
       end
     end
@@ -59,11 +55,9 @@ RSpec.describe Edools::School do
     context 'when without params' do
       it 'raises ArgumentError' do
         VCR.use_cassette('school/update_without_params') do
-          preserving_environment do
-            school.set_as_global_environment
+          school.set_as_global_environment
 
-            expect { Edools::School.update }.to raise_error ArgumentError
-          end
+          expect { Edools::School.update }.to raise_error ArgumentError
         end
       end
     end
@@ -72,11 +66,9 @@ RSpec.describe Edools::School do
   describe '#set_as_global_environment' do
     it 'sets the school as the global environment' do
       VCR.use_cassette('school/set_as_global_environment') do
-        preserving_environment do
-          school.set_as_global_environment
+        school.set_as_global_environment
 
-          expect(Edools.api_token).to eq school.credentials
-        end
+        expect(Edools.api_token).to eq school.credentials
       end
     end
   end
