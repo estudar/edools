@@ -67,9 +67,16 @@ Edools::Invitation.create(first_name: 'Student', email: 'email@student.com', pas
 ### Student example
 
 ```ruby
-Edools::Student.all
+Edools::User.all(type: 'student')
 
-Edools::Student.all(school_product_id: 1)
+Edools::User.all(type: 'student', school_product_id: 1)
+```
+
+### Session example
+
+```ruby
+session = Edools::Session.create(email: 'email@user.com', password: '******')
+session.set_as_global_environment # Sets the current_token to the session's credentials
 ```
 
 ## Contributing

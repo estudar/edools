@@ -8,7 +8,10 @@ require 'edools/school'
 require 'edools/course'
 require 'edools/school_product'
 require 'edools/invitation'
-require 'edools/student'
+require 'edools/user'
+require 'edools/session'
+require 'edools/media'
+require 'edools/enrollment'
 
 module Edools
   class RequestFailed < StandardError
@@ -18,6 +21,9 @@ module Edools
   end
 
   class NotFound < StandardError
+  end
+
+  class Unauthorized < StandardError
   end
 
   class AuthenticationException < StandardError

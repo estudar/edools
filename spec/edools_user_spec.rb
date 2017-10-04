@@ -2,11 +2,11 @@
 
 require 'spec_helper'
 
-RSpec.describe Edools::Student do
+RSpec.describe Edools::User do
   let(:school) { Edools::School.create name: 'Test', email: 'test@test.com', password: '12345678' }
 
   describe '.all' do
-    let(:all) { Edools::Student.all }
+    let(:all) { Edools::User.all type: 'student' }
 
     it 'returns an array' do
       preserving_environment do
