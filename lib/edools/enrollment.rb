@@ -13,7 +13,7 @@ module Edools
     end
 
     def self.create(data = {})
-      new Edools::ApiRequest.request(:post, base_url, enrollment: data.merge(registration_id: student.registrations.first[:id]))
+      new Edools::ApiRequest.request(:post, base_url, enrollment: data)
     rescue Edools::RequestWithErrors => exception
       new exception.errors
     end

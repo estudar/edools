@@ -64,12 +64,14 @@ Edools::SchoolProduct.all
 Edools::Invitation.create(first_name: 'Student', email: 'email@student.com', password: '******', password_confirmation: '******')
 ```
 
-### Student example
+### User example
 
 ```ruby
 Edools::User.all(type: 'student')
 
 Edools::User.all(type: 'student', school_product_id: 1)
+
+Edools::User.create_from_csv(media.s3_file_content)
 ```
 
 ### Session example
@@ -77,6 +79,13 @@ Edools::User.all(type: 'student', school_product_id: 1)
 ```ruby
 session = Edools::Session.create(email: 'email@user.com', password: '******')
 session.set_as_global_environment # Sets the current_token to the session's credentials
+```
+
+## Media example
+
+```ruby
+media = Edools::Media.find(1)
+media.s3_file_content # Fetches s3_file contents
 ```
 
 ## Contributing
