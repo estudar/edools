@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.info/schools/wizard
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundarydNRDXSqtzSutnE0S\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundarydNRDXSqtzSutnE0S\r\nContent-Disposition:
+        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundarydNRDXSqtzSutnE0S\r\nContent-Disposition:
+        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundarydNRDXSqtzSutnE0S--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '363'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundarydNRDXSqtzSutnE0S
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:37:24 GMT
+      Etag:
+      - W/"5ce9dc967c69d5426025055e402ec5c9"
+      Location:
+      - https://core.myedools.info/schools/1269
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 5b4df2b5-7b4e-4c8c-9553-264f96308d54
+      X-Runtime:
+      - '2.247891'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '306'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"school":{"id":1269,"subdomain":"test-b36b","name":"Test"},"library":{"id":1269},"organization":{"id":1263,"name":"Test"},"admin":{"id":591527,"full_name":"Test","email":"test@test.com","credentials":"41a9dc9571b4f2c839931b631a02871e:e3a8df1ce05ec0cc34fbc357ad17fd26","role_id":16677},"forum":{"id":1269}}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:37:24 GMT
+- request:
+    method: post
+    uri: https://core.myedools.info/schools/1269/school_products
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryZHasGBiMNVSONCdj\r\nContent-Disposition: form-data;
+        name=\"school_product[foo]\"\r\n\r\n1\r\n------RubyFormBoundaryZHasGBiMNVSONCdj\r\nContent-Disposition:
+        form-data; name=\"school_product[school_id]\"\r\n\r\n1269\r\n------RubyFormBoundaryZHasGBiMNVSONCdj--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="41a9dc9571b4f2c839931b631a02871e:e3a8df1ce05ec0cc34fbc357ad17fd26"
+      Content-Length:
+      - '261'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryZHasGBiMNVSONCdj
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:37:25 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 422 Unprocessable Entity
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - f9c14a78-58a0-4bec-897b-1629b3e4f4c5
+      X-Runtime:
+      - '0.047492'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '50'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsidGl0bGUiOlsibsOjbyBwb2RlIGZpY2FyIGVtIGJyYW5jbyJdfX0=
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:37:25 GMT
+recorded_with: VCR 3.0.3

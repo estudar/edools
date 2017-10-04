@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.info/schools/wizard
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryxR0cYWQBByGJp0Co\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryxR0cYWQBByGJp0Co\r\nContent-Disposition:
+        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundaryxR0cYWQBByGJp0Co\r\nContent-Disposition:
+        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundaryxR0cYWQBByGJp0Co--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '363'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryxR0cYWQBByGJp0Co
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:32:36 GMT
+      Etag:
+      - W/"4a042216d553d26b848b49aef5833897"
+      Location:
+      - https://core.myedools.info/schools/1253
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - aa5df38a-d870-4227-b528-0604f7a6c2a4
+      X-Runtime:
+      - '1.657692'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '306'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"school":{"id":1253,"subdomain":"test-edc5","name":"Test"},"library":{"id":1253},"organization":{"id":1247,"name":"Test"},"admin":{"id":591494,"full_name":"Test","email":"test@test.com","credentials":"b7313686af77e403d0e8e9b8b90044d7:6336604429a6e8711567e7d1eb0a28ed","role_id":16485},"forum":{"id":1253}}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:32:37 GMT
+- request:
+    method: post
+    uri: https://core.myedools.info/courses
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundarys1cQ0K8vxgbXzk2c\r\nContent-Disposition: form-data;
+        name=\"course[name]\"\r\n\r\nTest\r\n------RubyFormBoundarys1cQ0K8vxgbXzk2c--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="b7313686af77e403d0e8e9b8b90044d7:6336604429a6e8711567e7d1eb0a28ed"
+      Content-Length:
+      - '143'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundarys1cQ0K8vxgbXzk2c
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:32:38 GMT
+      Etag:
+      - W/"7540d81ccda728089b619aa800536263"
+      Location:
+      - https://core.myedools.info/courses/22138
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 9ccb3068-a5db-4533-95e0-e27332be2f74
+      X-Runtime:
+      - '0.226950'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '332'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":22138,"name":"Test","description":null,"image_url":null,"duration":null,"ready":false,"path_ids":[],"forum_section_ids":[],"linear_requirements":false,"library_resource":{"id":1167889,"library":{"id":1253},"library_tags":[],"school_products":[]},"created_at":"2017-10-04T00:32:37.837Z","updated_at":"2017-10-04T00:32:37.837Z"}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:32:38 GMT
+recorded_with: VCR 3.0.3

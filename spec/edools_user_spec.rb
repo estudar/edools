@@ -9,9 +9,11 @@ RSpec.describe Edools::User do
     let(:all) { Edools::User.all type: 'student' }
 
     it 'returns an array' do
-      preserving_environment do
-        school.set_as_global_environment
-        expect(all).to be_instance_of Array
+      VCR.use_cassette('user/all') do
+        preserving_environment do
+          school.set_as_global_environment
+          expect(all).to be_instance_of Array
+        end
       end
     end
   end

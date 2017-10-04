@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.info/schools/wizard
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryZfMWUu7v4GVhRFA9\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryZfMWUu7v4GVhRFA9--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '143'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryZfMWUu7v4GVhRFA9
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:39:40 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 422 Unprocessable Entity
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 299f4d81-b717-4282-8944-015cb08d266e
+      X-Runtime:
+      - '0.021742'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '122'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvcnMiOnsiZW1haWwiOlsibsOjbyBwb2RlIGZpY2FyIGVtIGJyYW5jbyIsIm7Do28gw6kgdsOhbGlkbyJdLCJwYXNzd29yZCI6WyLDqSBtdWl0byBjdXJ0byAobcOtbmltbzogNiBjYXJhY3RlcmVzKSJdfX0=
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:39:40 GMT
+recorded_with: VCR 3.0.3

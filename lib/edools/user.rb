@@ -56,9 +56,9 @@ module Edools
         user = find_or_create(entry)
         next if user.type == 'Collaborator' || entry[:school_product_id] == '0'
         user.enroll(entry[:school_product_id])
-      end
 
-      true
+        user
+      end
     end
 
     def self.find_or_create(data)

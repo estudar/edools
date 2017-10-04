@@ -9,9 +9,11 @@ RSpec.describe Edools::SchoolProduct do
   describe '.create' do
     context 'when valid params' do
       it 'returns an instance of Edools::SchoolProduct' do
-        preserving_environment do
-          school.set_as_global_environment
-          expect(school_product).to be_an_instance_of Edools::SchoolProduct
+        VCR.use_cassette('school_product/create_valid') do
+          preserving_environment do
+            school.set_as_global_environment
+            expect(school_product).to be_an_instance_of Edools::SchoolProduct
+          end
         end
       end
     end
@@ -20,16 +22,20 @@ RSpec.describe Edools::SchoolProduct do
       let(:school_product) { Edools::SchoolProduct.create foo: '1', school_id: school.id }
 
       it 'returns an instance of Edools::SchoolProduct' do
-        preserving_environment do
-          school.set_as_global_environment
-          expect(school_product).to be_an_instance_of Edools::SchoolProduct
+        VCR.use_cassette('school_product/create_invalid_instance') do
+          preserving_environment do
+            school.set_as_global_environment
+            expect(school_product).to be_an_instance_of Edools::SchoolProduct
+          end
         end
       end
 
       it 'has errors' do
-        preserving_environment do
-          school.set_as_global_environment
-          expect(school_product.errors).not_to be_empty
+        VCR.use_cassette('school_product/create_invalid_errors') do
+          preserving_environment do
+            school.set_as_global_environment
+            expect(school_product.errors).not_to be_empty
+          end
         end
       end
     end
@@ -38,9 +44,11 @@ RSpec.describe Edools::SchoolProduct do
       let(:school_product) { Edools::SchoolProduct.create }
 
       it 'raises Edools::BadRequest' do
-        preserving_environment do
-          school.set_as_global_environment
-          expect { school_product }.to raise_error ArgumentError
+        VCR.use_cassette('school_product/create_no_params_bad_request') do
+          preserving_environment do
+            school.set_as_global_environment
+            expect { school_product }.to raise_error ArgumentError
+          end
         end
       end
     end
@@ -50,9 +58,11 @@ RSpec.describe Edools::SchoolProduct do
     let(:all) { Edools::SchoolProduct.all }
 
     it 'returns an array' do
-      preserving_environment do
-        school.set_as_global_environment
-        expect(all).to be_instance_of Array
+      VCR.use_cassette('school_product/all') do
+        preserving_environment do
+          school.set_as_global_environment
+          expect(all).to be_instance_of Array
+        end
       end
     end
   end

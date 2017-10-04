@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.info/schools/wizard
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryiT7wkjFdtHcoih63\r\nContent-Disposition: form-data;
+        name=\"school[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryiT7wkjFdtHcoih63\r\nContent-Disposition:
+        form-data; name=\"school[email]\"\r\n\r\ntest@test.com\r\n------RubyFormBoundaryiT7wkjFdtHcoih63\r\nContent-Disposition:
+        form-data; name=\"school[password]\"\r\n\r\n12345678\r\n------RubyFormBoundaryiT7wkjFdtHcoih63--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '363'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryiT7wkjFdtHcoih63
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:34:04 GMT
+      Etag:
+      - W/"6b3e8b643a788f5169a0277d257ffbbe"
+      Location:
+      - https://core.myedools.info/schools/1258
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - b3c90798-956b-4845-9d73-f4ebb1ed893e
+      X-Runtime:
+      - '1.636090'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '306'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"school":{"id":1258,"subdomain":"test-ffa9","name":"Test"},"library":{"id":1258},"organization":{"id":1252,"name":"Test"},"admin":{"id":591504,"full_name":"Test","email":"test@test.com","credentials":"aab317205c75086a4cba5453084ee314:2e81954d86af1de97b35de8589db9796","role_id":16545},"forum":{"id":1258}}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:34:04 GMT
+- request:
+    method: post
+    uri: https://core.myedools.info/courses
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundarymRbGZNMrBPZubAJh\r\nContent-Disposition: form-data;
+        name=\"course\"\r\n\r\n\r\n------RubyFormBoundarymRbGZNMrBPZubAJh--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin16.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="aab317205c75086a4cba5453084ee314:2e81954d86af1de97b35de8589db9796"
+      Content-Length:
+      - '133'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundarymRbGZNMrBPZubAJh
+      Host:
+      - core.myedools.info
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Date:
+      - Wed, 04 Oct 2017 00:34:05 GMT
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Status:
+      - 400 Bad Request
+      X-Request-Id:
+      - 952a6751-f90a-46bc-9cfd-f72468b0cad2
+      X-Runtime:
+      - '0.105085'
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status":"400","error":"Bad Request"}'
+    http_version: 
+  recorded_at: Wed, 04 Oct 2017 00:34:05 GMT
+recorded_with: VCR 3.0.3
