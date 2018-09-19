@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://core.myedools.info/schools/wizard
+    uri: https://core.myedools.com/schools/wizard
     body:
       encoding: ASCII-8BIT
       string: "------RubyFormBoundaryH9vvmWeesIBCBPIp\r\nContent-Disposition: form-data;
@@ -21,7 +21,7 @@ http_interactions:
       Content-Type:
       - multipart/form-data; boundary=----RubyFormBoundaryH9vvmWeesIBCBPIp
       Host:
-      - core.myedools.info
+      - core.myedools.com
   response:
     status:
       code: 422

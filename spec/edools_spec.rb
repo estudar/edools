@@ -13,6 +13,6 @@ RSpec.describe Edools do
   end
 
   it 'has a base_url' do
-    expect(Edools.base_url).to eq 'https://core.myedools.info'
+    expect(Edools.base_url).to eq 'https://core.myedools.com'
   end
 end

@@ -38,13 +38,13 @@ module Edools
   end
 
   class << self
-    attr_accessor :api_token
+    attr_accessor :api_token, :school_api_url
     attr_reader :api_version
   end
 
   @api_version = 'v1'
 
   def self.base_url
-    'https://core.myedools.info'
+    self.school_api_url || 'https://core.myedools.com'
   end
 end

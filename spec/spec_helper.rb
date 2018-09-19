@@ -24,3 +24,4 @@ RSpec.configure do |config|
     end
   end
 end
+Edools.api_token = 'randomapikey'

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://core.myedools.info/schools/wizard
+    uri: https://core.myedools.com/schools/wizard
     body:
       encoding: ASCII-8BIT
       string: "------RubyFormBoundaryhM5zn8c6AWI441Av\r\nContent-Disposition: form-data;
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - multipart/form-data; boundary=----RubyFormBoundaryhM5zn8c6AWI441Av
       Host:
-      - core.myedools.info
+      - core.myedools.com
   response:
     status:
       code: 201
@@ -43,7 +43,7 @@ http_interactions:
       Etag:
       - W/"49a231b29c426a94f0be80c36a59944d"
       Location:
-      - https://core.myedools.info/schools/1288
+      - https://core.myedools.com/schools/1288
       Server:
       - nginx/1.4.6 (Ubuntu)
       Status:
@@ -77,7 +77,7 @@ http_interactions:
   recorded_at: Wed, 04 Oct 2017 00:46:37 GMT
 - request:
     method: post
-    uri: https://core.myedools.info/courses
+    uri: https://core.myedools.com/courses
     body:
       encoding: ASCII-8BIT
       string: "------RubyFormBoundary0lxQGME3OyWVwUHV\r\nContent-Disposition: form-data;
@@ -96,7 +96,7 @@ http_interactions:
       Content-Type:
       - multipart/form-data; boundary=----RubyFormBoundary0lxQGME3OyWVwUHV
       Host:
-      - core.myedools.info
+      - core.myedools.com
   response:
     status:
       code: 400
