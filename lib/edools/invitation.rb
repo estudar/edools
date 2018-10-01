@@ -14,10 +14,10 @@ module Edools
 
     def enrollment_data
       {
-        student_id: data[:id],
-        registration_id: data[:registration][:id],
-        enrollment_id: data[:enrollments][:id],
-        school_product_id: data[:enrollments][:school_product_id]
+        student_id: @data[:id],
+        registration_id: @data[:registration][:id],
+        enrollment_id: @data[:enrollments][:id],
+        school_product_id: @data[:enrollments][:school_product_id]
       }
     end
 
