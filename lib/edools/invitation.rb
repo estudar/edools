@@ -9,6 +9,16 @@ module Edools
       @first_name = data[:first_name]
       @email = data[:email]
       @errors = data[:errors]
+      @data = data
+    end
+
+    def enrollment_data
+      {
+        student_id: data[:id],
+        registration_id: data[:registration][:id],
+        enrollment_id: data[:enrollments][:id],
+        school_product_id: data[:enrollments][:school_product_id]
+      }
     end
 
     def self.create(data = {})
