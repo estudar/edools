@@ -1,12 +1,12 @@
 ---
 http_interactions:
 - request:
-    method: put
-    uri: https://core.myedools.com/enrollments/test
+    method: post
+    uri: https://core.myedools.com/enrollments
     body:
       encoding: ASCII-8BIT
-      string: "------RubyFormBoundaryFoUQd6xy8BG2GsnC\r\nContent-Disposition: form-data;
-        name=\"enrollment[id]\"\r\n\r\ntest\r\n------RubyFormBoundaryFoUQd6xy8BG2GsnC--\r\n"
+      string: "------RubyFormBoundarytZP9S592HhD2uRQQ\r\nContent-Disposition: form-data;
+        name=\"enrollment[name]\"\r\n\r\nTest\r\n------RubyFormBoundarytZP9S592HhD2uRQQ--\r\n"
     headers:
       Accept:
       - application/vnd.edools.core.v1+json
@@ -17,39 +17,39 @@ http_interactions:
       Authorization:
       - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
       Content-Length:
-      - '145'
+      - '147'
       Content-Type:
-      - multipart/form-data; boundary=----RubyFormBoundaryFoUQd6xy8BG2GsnC
+      - multipart/form-data; boundary=----RubyFormBoundarytZP9S592HhD2uRQQ
       Host:
       - core.myedools.com
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 500
+      message: Internal Server Error
     headers:
       Date:
-      - Wed, 28 Nov 2018 20:06:33 GMT
+      - Wed, 28 Nov 2018 20:06:25 GMT
       Content-Type:
       - application/vnd.edools.core.v1+json; charset=utf-8
       Content-Length:
-      - '36'
+      - '48'
       Connection:
       - keep-alive
       Keep-Alive:
       - timeout=15
       Status:
-      - 404 Not Found
+      - 500 Internal Server Error
       X-Request-Id:
-      - c849b284-654f-4374-b12c-0b2b7e46bea7
+      - 6c51a2f6-8597-466b-9c5e-7c738efc43b5
       X-Runtime:
-      - '0.012136'
+      - '0.091572'
       X-Gocache-Cachestatus:
       - BYPASS
       Server:
       - gocache
     body:
       encoding: UTF-8
-      string: '{"status":"404","error":"Not Found"}'
+      string: '{"status":"500","error":"Internal Server Error"}'
     http_version:
-  recorded_at: Wed, 28 Nov 2018 20:06:33 GMT
+  recorded_at: Wed, 28 Nov 2018 20:06:25 GMT
 recorded_with: VCR 3.0.3

@@ -3,17 +3,26 @@
 require 'spec_helper'
 
 RSpec.describe Edools::Enrollment do
-    let(:enrollment) { Edools::Enrollment.create code: '010101',
-                  status: 'active',
-                  unlimited: true,
+    let(:enrollment) { Edools::Enrollment.create registration_id: '6479697',
+                  school_product_id: '73636',
                   max_attendance_type: "indeterminate"
     }
+
+  describe '.create' do
+    context 'when valid params' do
+      it 'returns an instance of Edools::Enrollment' do
+        VCR.use_cassette('enrollment/create_valid_instance') do
+          expect(enrollment).to be_an_instance_of Edools::Enrollment
+        end
+      end
+    end
+  end
 
   describe '.update' do
     context 'when valid params' do
       it 'succeeds' do
         VCR.use_cassette('enrollment/update_valid') do
-          expect(Edools::Enrollment.update(id: enrollment.id)).to be true
+          expect(Edools::Enrollment.update(id: 2022188)).to be true
         end
       end
     end
