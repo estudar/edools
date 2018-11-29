@@ -37,5 +37,14 @@ module Edools
       student = User.find(type: 'student', id: data[:student_id])
       create(data.merge(max_attendance_type: 'indeterminate', registration_id: student.registrations.first[:id]))
     end
+
+    def self.update(data = {})
+      raise ArgumentError, 'missing id' unless data.key? :id
+
+      url = "#{base_url}/#{data[:id]}"
+      Edools::ApiRequest.request(:put, url, enrollment: data)
+    rescue Edools::RequestWithErrors => exception
+      new exception.errors
+    end
   end
 end

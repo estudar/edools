@@ -42,6 +42,37 @@ Edools::School.create(name: 'My School', email: 'my@school.com', password: '****
 Edools::School.update(id: 1, name: 'Other School')
 ```
 
+### Enrollment example
+
+```ruby
+Edools::Enrollment.create(registration_id: 6479697, school_product_id: 73636, max_attendance_type: 'indeterminate')
+```
+
+In the `update`, the attributes can be updated are:
+- `school_product_id`
+- `max_attendance_type`
+- `status`
+- `available_until`
+- `created_at`
+- `activated_at`
+- `unlimited`
+- `course_class_ids`
+
+The attribute Status can be:
+- `pending`
+- `active`
+- `expired`
+- `deactivated`
+- `canceled`
+
+
+```ruby
+Edools::Enrollment.update(id: 1, status: "deactivated")
+
+Edools::Enrollment.update(id: 1, school_product_id: 75506, status: "active")
+Edools::Enrollment.all
+```
+
 ### Course example
 
 ```ruby

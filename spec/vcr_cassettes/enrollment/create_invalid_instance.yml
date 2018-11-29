@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.com/enrollments
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryniNG7bSfXq6RuXKp\r\nContent-Disposition: form-data;
+        name=\"enrollment[name]\"\r\n\r\nTest\r\n------RubyFormBoundaryniNG7bSfXq6RuXKp--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin17.7.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '147'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryniNG7bSfXq6RuXKp
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Wed, 28 Nov 2018 20:06:21 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Content-Length:
+      - '48'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 500 Internal Server Error
+      X-Request-Id:
+      - 69416fbc-9327-47fb-b8e8-319ca45ff5f4
+      X-Runtime:
+      - '0.214791'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: UTF-8
+      string: '{"status":"500","error":"Internal Server Error"}'
+    http_version:
+  recorded_at: Wed, 28 Nov 2018 20:06:21 GMT
+recorded_with: VCR 3.0.3
