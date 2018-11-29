@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.myedools.com/enrollments/2022188/lessons_progresses
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryZf0fZr4B4XHP9kkb\r\nContent-Disposition: form-data;
+        name=\"id\"\r\n\r\n2022188\r\n------RubyFormBoundaryZf0fZr4B4XHP9kkb--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '136'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryZf0fZr4B4XHP9kkb
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 29 Nov 2018 18:04:17 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      X-Frame-Options:
+      - DENY
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Etag:
+      - W/"a79032b367196803c71673c747e5eab9"
+      X-Request-Id:
+      - c91549ae-642e-4ec5-8e5a-2431b16b8503
+      X-Runtime:
+      - '0.065620'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsZXNzb25zX3Byb2dyZXNzZXMiOlt7ImlkIjoxLCJwcm9ncmVzcyI6MTAwLjAsImNvbXBsZXRlZCI6dHJ1ZX0seyJpZCI6MSwicHJvZ3Jlc3MiOjEwMC4wLCJjb21wbGV0ZWQiOnRydWV9LHsiaWQiOjEsInByb2dyZXNzIjoxMDAuMCwiY29tcGxldGVkIjp0cnVlfSx7ImlkIjoxLCJwcm9ncmVzcyI6MTAwLjAsImNvbXBsZXRlZCI6dHJ1ZX0seyJpZCI6MSwicHJvZ3Jlc3MiOjEwMC4wLCJjb21wbGV0ZWQiOnRydWV9LHsiaWQiOjEsInByb2dyZXNzIjoxMDAuMCwiY29tcGxldGVkIjp0cnVlfSx7ImlkIjoxLCJwcm9ncmVzcyI6MTAwLjAsImNvbXBsZXRlZCI6dHJ1ZX0seyJpZCI6MSwicHJvZ3Jlc3MiOjEwMC4wLCJjb21wbGV0ZWQiOnRydWV9LHsiaWQiOjEsInByb2dyZXNzIjoxMDAuMCwiY29tcGxldGVkIjp0cnVlfSx7ImlkIjoxLCJwcm9ncmVzcyI6MTAwLjAsImNvbXBsZXRlZCI6dHJ1ZX1dLCJjdXJyZW50X3BhZ2UiOjEsInBlcl9wYWdlIjoxMCwidG90YWxfcGFnZXMiOjMsInRvdGFsX2NvdW50IjozMH0=
+    http_version:
+  recorded_at: Thu, 29 Nov 2018 18:04:18 GMT
+recorded_with: VCR 3.0.3

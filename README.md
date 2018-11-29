@@ -73,6 +73,42 @@ Edools::Enrollment.update(id: 1, school_product_id: 75506, status: "active")
 Edools::Enrollment.all
 ```
 
+#### The every method
+
+The `every` method is an alternative to the `all` method, it returns the entire query data.
+
+```ruby
+Edools::Enrollment.every
+Edools::Enrollment.every({school_product:{id: 73636}, student_id: 6506727})
+```
+
+The allowed filters for enrollments:
+- `full_name`
+- `student_id`
+- `course_id`
+- `course_class_id`
+- `product_name`
+- `school_product_id`
+- `status`
+- `free_enrollments_type`
+
+### Lesson Progress example
+
+Check the progress of the lessons, if it have completed lesson will return the result hash populate with data.
+```ruby
+Edools::Enrollment.lessons_progresses({id: 2022188})
+```
+
+If it is necessary to page:
+```ruby
+Edools::Enrollment.lessons_progresses({id: 2022188, per_page: 20, page: 2})
+```
+
+The allowed filters for lessons_progresses:
+- `lesson_id`
+- `updated_at`> or `updated_at`<
+- `created_at`> or `created_at`<
+
 ### Course example
 
 ```ruby
@@ -127,4 +163,3 @@ Bug reports and pull requests are welcome. This project is intended to be a safe
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

@@ -46,5 +46,16 @@ module Edools
     rescue Edools::RequestWithErrors => exception
       new exception.errors
     end
+
+    def self.every(data = {})
+      Edools::ApiRequest.request(:get, base_url, data)
+    end
+
+    def self.lessons_progresses(data = {})
+      raise ArgumentError, 'missing id' unless data.key? :id
+
+      url = "#{base_url}/#{data[:id]}/lessons_progresses"
+      Edools::ApiRequest.request(:get, url, data)
+    end
   end
 end
