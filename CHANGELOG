@@ -1,0 +1,2 @@
+30/11/2018
+- Removes dotenv dependency as env management should be a responsability from the app.

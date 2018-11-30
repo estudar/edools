@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'dotenv/load'
 require 'edools/version'
 require 'edools/utils'
 require 'edools/api_request'
