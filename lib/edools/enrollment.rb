@@ -18,9 +18,13 @@ module Edools
       new exception.errors
     end
 
-    def self.all(data = {})
+    def self.all(data = {}, raw = false)
       response = Edools::ApiRequest.request(:get, base_url, data)
-      response[:enrollments].map { |enrollment| new enrollment }
+      if raw
+        response
+      else
+        response[:enrollments].map { |enrollment| new enrollment }
+      end
     end
 
     def self.base_url
@@ -45,10 +49,6 @@ module Edools
       Edools::ApiRequest.request(:put, url, enrollment: data)
     rescue Edools::RequestWithErrors => exception
       new exception.errors
-    end
-
-    def self.every(data = {})
-      Edools::ApiRequest.request(:get, base_url, data)
     end
 
     def self.lessons_progresses(data = {})

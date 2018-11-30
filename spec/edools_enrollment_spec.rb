@@ -8,21 +8,21 @@ RSpec.describe Edools::Enrollment do
                   max_attendance_type: "indeterminate"
     }
 
-  describe '.every' do
-    context 'request without parameters' do
-      it 'returns every the data' do
-        VCR.use_cassette('enrollment/every_without_filter') do
-          result = Edools::Enrollment.every
+  describe '.all' do
+    context 'pass the raw parameter as false' do
+      it 'returns without raw data' do
+        VCR.use_cassette('enrollment/all_with_raw_as_false') do
+          result = Edools::Enrollment.all
 
-          expect(result[:enrollments].count).to be 10
+          expect(result.count).to be 10
         end
       end
     end
 
-    context 'request with parameters' do
-      it 'returns every the filtered data' do
-        VCR.use_cassette('enrollment/every_with_filter') do
-          result = Edools::Enrollment.every({school_product:{id: 73636}, student_id: 6506727})
+    context 'pass the raw parameter as true' do
+      it 'returns with raw data' do
+        VCR.use_cassette('enrollment/all_with_raw_as_true') do
+          result = Edools::Enrollment.all({school_product:{id: 73636}, student_id: 6506727}, true)
 
           expect(result[:enrollments].count).to be 4
         end

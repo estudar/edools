@@ -44,6 +44,24 @@ Edools::School.update(id: 1, name: 'Other School')
 
 ### Enrollment example
 
+The `all` method:
+
+```ruby
+Edools::Enrollment.all
+Edools::Enrollment.all({}, true)
+Edools::Enrollment.all({school_product:{id: 73636}, student_id: 6506727}, true)
+```
+
+The allowed filters for enrollments:
+- `full_name`
+- `student_id`
+- `course_id`
+- `course_class_id`
+- `product_name`
+- `school_product_id`
+- `status`
+- `free_enrollments_type`
+
 ```ruby
 Edools::Enrollment.create(registration_id: 6479697, school_product_id: 73636, max_attendance_type: 'indeterminate')
 ```
@@ -72,25 +90,6 @@ Edools::Enrollment.update(id: 1, status: "deactivated")
 Edools::Enrollment.update(id: 1, school_product_id: 75506, status: "active")
 Edools::Enrollment.all
 ```
-
-#### The every method
-
-The `every` method is an alternative to the `all` method, it returns the entire query data.
-
-```ruby
-Edools::Enrollment.every
-Edools::Enrollment.every({school_product:{id: 73636}, student_id: 6506727})
-```
-
-The allowed filters for enrollments:
-- `full_name`
-- `student_id`
-- `course_id`
-- `course_class_id`
-- `product_name`
-- `school_product_id`
-- `status`
-- `free_enrollments_type`
 
 ### Lesson Progress example
 
