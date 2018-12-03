@@ -5,6 +5,7 @@ require 'edools'
 require 'support/helpers'
 require 'support/vcr'
 require 'webmock/rspec'
+require 'pry'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
