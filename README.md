@@ -74,6 +74,42 @@ Edools::Enrollment.update(id: 1, school_product_id: 75506, status: "active")
 Edools::Enrollment.all
 ```
 
+### LessonProgress example
+
+Using `enrollment_id` as a parameter to search for LessonProgress:
+```ruby
+Edools::LessonProgress.find_paginated_from_enrollments(enrollment_id: 2075731)
+```
+
+Using `student_id` as a parameter to search for LessonProgress:
+```ruby
+Edools::LessonProgress.find_paginated_from_students(student_id: 6558938)
+```
+
+Using `school_product_id` as a parameter to search for LessonProgress:
+```ruby
+Edools::LessonProgress.find_paginated_from_school_products(school_product_id: 73636)
+```
+
+Remember that the response of the endpoint can be paginated, see an example:
+```ruby
+result = Edools::LessonProgress.find_paginated_from_school_products(school_product_id: 73636)
+
+result.paginate
+# => #<OpenStruct current_page=1, per_page=50, total_pages=1526, total_count=76254>
+
+result.paginate.total_count
+# => 76254
+```
+
+Other parameters that can be passed to the endpoint:
+```ruby
+result = Edools::LessonProgress.find_paginated_from_school_products(school_product_id: 73636, page: 2, per_page: 30)
+
+result.paginate
+# => #<OpenStruct current_page=2, per_page=30, total_pages=2, total_count=60>
+```
+
 ### Course example
 
 ```ruby
@@ -128,4 +164,3 @@ Bug reports and pull requests are welcome. This project is intended to be a safe
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

@@ -11,6 +11,8 @@ require 'edools/user'
 require 'edools/session'
 require 'edools/media'
 require 'edools/enrollment'
+require 'edools/lesson_progress'
+require 'syslog/logger'
 require 'pry'
 
 module Edools
@@ -46,5 +48,9 @@ module Edools
 
   def self.base_url
     self.school_api_url || 'https://core.myedools.com'
+  end
+
+  def self.logger
+    Syslog::Logger.new 'Edools'
   end
 end
