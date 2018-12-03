@@ -24,7 +24,7 @@ references:
                           --format RspecJunitFormatter \
                           --out /tmp/test-results/rspec.xml \
                           --format progress \
-                          spec/**/*_spec.rb
+                          --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
     - run:
         name: Check code style with Rubocop
         command: bundle exec rubocop
