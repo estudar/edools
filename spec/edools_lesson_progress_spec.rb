@@ -9,7 +9,7 @@ RSpec.describe Edools::LessonProgress do
         VCR.use_cassette('lesson_progress/all_from_enrollments_succeeds') do
           result = Edools::LessonProgress.find_paginated_by_enrollment(enrollment_id: 2075731)
 
-          expect(result.lessons_progresses.count).to be 31
+          expect(result.count).to be 31
         end
       end
     end
@@ -37,7 +37,7 @@ RSpec.describe Edools::LessonProgress do
         VCR.use_cassette('lesson_progress/all_from_students_succeeds') do
           result = Edools::LessonProgress.find_paginated_by_student(student_id: 6558938)
 
-          expect(result.lessons_progresses.count).to be 30
+          expect(result.count).to be 30
         end
       end
     end
@@ -65,7 +65,7 @@ RSpec.describe Edools::LessonProgress do
         VCR.use_cassette('lesson_progress/all_from_school_products_succeeds') do
           result = Edools::LessonProgress.find_paginated_by_school_product(school_product_id: 73636)
 
-          expect(result.lessons_progresses.count).to be 50
+          expect(result.count).to be 50
           expect(result.paginate.total_pages).to be 1526
           expect(result.paginate.total_count).to be 76254
         end

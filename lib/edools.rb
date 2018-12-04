@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+require 'syslog/logger'
+require 'pry'
 require 'edools/version'
 require 'edools/utils'
 require 'edools/api_request'
+require 'edools/pagination_proxy'
 require 'edools/school'
 require 'edools/course'
 require 'edools/school_product'
@@ -12,8 +15,6 @@ require 'edools/session'
 require 'edools/media'
 require 'edools/enrollment'
 require 'edools/lesson_progress'
-require 'syslog/logger'
-require 'pry'
 
 module Edools
   class RequestFailed < StandardError

@@ -2,7 +2,8 @@
 
 module Edools
   class LessonProgress
-    attr_reader :lesson_progress, :paginate, :errors
+    attr_reader :lesson_progress, :errors
+    attr_accessor :paginate
 
     DEFAULT_PAGE = 1
     DEFAULT_PER_PAGE = 50
@@ -20,10 +21,9 @@ module Edools
 
       response = Edools::ApiRequest.request(:get, url, data)
 
-      OpenStruct.new(
-        lessons_progresses: objectify_lessons_progresses(response[:lessons_progresses]),
-        paginate: objectify_paginate(response)
-      )
+      Edools::PaginationProxy.new(objectify_lessons_progresses(response[:lessons_progresses])).tap do |proxy|
+        proxy.paginate = objectify_paginate(response)
+      end
     end
 
     def self.find_paginated_by_student(student_id: , page: DEFAULT_PAGE, per_page: DEFAULT_PER_PAGE)
@@ -34,10 +34,9 @@ module Edools
 
       response = Edools::ApiRequest.request(:get, url, data)
 
-      OpenStruct.new(
-        lessons_progresses: objectify_lessons_progresses(response[:lessons_progresses]),
-        paginate: objectify_paginate(response)
-      )
+      Edools::PaginationProxy.new(objectify_lessons_progresses(response[:lessons_progresses])).tap do |proxy|
+        proxy.paginate = objectify_paginate(response)
+      end
     end
 
     def self.find_paginated_by_school_product(school_product_id: , page: DEFAULT_PAGE, per_page: DEFAULT_PER_PAGE)
@@ -48,10 +47,9 @@ module Edools
 
       response = Edools::ApiRequest.request(:get, url, data)
 
-      OpenStruct.new(
-        lessons_progresses: objectify_lessons_progresses(response[:lessons_progresses]),
-        paginate: objectify_paginate(response)
-      )
+      Edools::PaginationProxy.new(objectify_lessons_progresses(response[:lessons_progresses])).tap do |proxy|
+        proxy.paginate = objectify_paginate(response)
+      end
     end
 
     def self.show(data = {})
