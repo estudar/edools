@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.myedools.com/school_products/73636/lessons_progresses
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryMHorn9qworVmZdmB\r\nContent-Disposition: form-data;
+        name=\"school_product_id\"\r\n\r\n73636\r\n------RubyFormBoundaryMHorn9qworVmZdmB\r\nContent-Disposition:
+        form-data; name=\"per_page\"\r\n\r\n100\r\n------RubyFormBoundaryMHorn9qworVmZdmB--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '245'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryMHorn9qworVmZdmB
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Dec 2018 13:19:50 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      X-Frame-Options:
+      - DENY
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Etag:
+      - W/"ec6f3b8ffbc96c64ca5b66876f824b86"
+      X-Request-Id:
+      - 65020642-a7b0-45ee-ae7b-55c26109498e
+      X-Runtime:
+      - '0.545341'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJsZXNzb25zX3Byb2dyZXNzZXMiOlt7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9LHsiaWQiOjExMTExMTExfSx7ImlkIjoxMTExMTExMX0seyJpZCI6MTExMTExMTF9XSwiY3VycmVudF9wYWdlIjoxLCJwZXJfcGFnZSI6NTAsInRvdGFsX3BhZ2VzIjoxNTI2LCJ0b3RhbF9jb3VudCI6NzYyNTR9
+    http_version:
+  recorded_at: Mon, 03 Dec 2018 13:19:52 GMT
+recorded_with: VCR 3.0.3

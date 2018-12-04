@@ -74,6 +74,49 @@ Edools::Enrollment.update(id: 1, school_product_id: 75506, status: "active")
 Edools::Enrollment.all
 ```
 
+### LessonProgress example
+
+Using `enrollment_id` as a parameter to search for LessonProgress:
+```ruby
+result = Edools::LessonProgress.find_paginated_by_enrollment(enrollment_id: 2222222)
+
+result
+# => #<OpenStruct id=11111111, progress=100.0, completed=true, grade=nil, enrollment_id=2222222, exam_answer_ids=[], time_spent=0, views=1, current_video_time=0, lesson=#<OpenStruct id=3333333, type="ContentLesson", title="Lesson Title">, progress_card=#<OpenStruct course_name="Course Name">, enrollment=#<OpenStruct id=4444444, student_first_name="Student First Name", student_last_name="Student Last Name", student_cover_image_url="https://cdn.edools.com/assets/images/users/default.jpeg">, created_at="2018-11-29T15:59:44.140Z", updated_at="2018-11-29T15:59:52.854Z">
+...
+
+result.paginate
+#<OpenStruct current_page=1, per_page=50, total_pages=1, total_count=31>
+```
+
+Using `student_id` as a parameter to search for LessonProgress:
+```ruby
+Edools::LessonProgress.find_paginated_by_student(student_id: 6558938)
+```
+
+Using `school_product_id` as a parameter to search for LessonProgress:
+```ruby
+Edools::LessonProgress.find_paginated_by_school_product(school_product_id: 73636)
+```
+
+Remember that the response of the endpoint can be paginated, see an example:
+```ruby
+result = Edools::LessonProgress.find_paginated_by_school_product(school_product_id: 73636)
+
+result.paginate
+# => #<OpenStruct current_page=1, per_page=50, total_pages=1526, total_count=76254>
+
+result.paginate.total_count
+# => 76254
+```
+
+Other parameters that can be passed to the endpoint:
+```ruby
+result = Edools::LessonProgress.find_paginated_by_school_product(school_product_id: 73636, page: 2, per_page: 30)
+
+result.paginate
+# => #<OpenStruct current_page=2, per_page=30, total_pages=2, total_count=60>
+```
+
 ### Course example
 
 ```ruby
@@ -128,4 +171,3 @@ Bug reports and pull requests are welcome. This project is intended to be a safe
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

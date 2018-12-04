@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+require 'syslog/logger'
+require 'pry'
 require 'edools/version'
 require 'edools/utils'
 require 'edools/api_request'
+require 'edools/pagination_proxy'
 require 'edools/school'
 require 'edools/course'
 require 'edools/school_product'
@@ -11,7 +14,7 @@ require 'edools/user'
 require 'edools/session'
 require 'edools/media'
 require 'edools/enrollment'
-require 'pry'
+require 'edools/lesson_progress'
 
 module Edools
   class RequestFailed < StandardError
@@ -46,5 +49,9 @@ module Edools
 
   def self.base_url
     self.school_api_url || 'https://core.myedools.com'
+  end
+
+  def self.logger
+    Syslog::Logger.new 'Edools'
   end
 end
