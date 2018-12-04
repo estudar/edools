@@ -11,6 +11,7 @@ require 'edools/user'
 require 'edools/session'
 require 'edools/media'
 require 'edools/enrollment'
+require 'pry'
 
 module Edools
   class RequestFailed < StandardError
