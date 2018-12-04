@@ -3,12 +3,11 @@
 require 'spec_helper'
 
 RSpec.describe Edools::LessonProgress do
-  describe '.find_paginated_from_enrollments' do
+  describe '.find_paginated_by_enrollment' do
     context 'when valid params' do
       it 'succeeds' do
         VCR.use_cassette('lesson_progress/all_from_enrollments_succeeds') do
-
-          result = Edools::LessonProgress.find_paginated_from_enrollments(enrollment_id: 2075731)
+          result = Edools::LessonProgress.find_paginated_by_enrollment(enrollment_id: 2075731)
 
           expect(result.lessons_progresses.count).to be 31
         end
@@ -18,7 +17,7 @@ RSpec.describe Edools::LessonProgress do
     context 'when enrollment doesn\'t exist' do
       it 'raises Edools::NotFound' do
         VCR.use_cassette('lesson_progress/all_from_enrollments_not_found') do
-          expect { Edools::LessonProgress.find_paginated_from_enrollments(enrollment_id: 'test') }.to raise_error Edools::NotFound
+          expect { Edools::LessonProgress.find_paginated_by_enrollment(enrollment_id: 'test') }.to raise_error Edools::NotFound
         end
       end
     end
@@ -26,17 +25,17 @@ RSpec.describe Edools::LessonProgress do
     context 'when without params' do
       it 'raises ArgumentError' do
         VCR.use_cassette('enrollment/all_from_enrollments_without_params') do
-          expect { Edools::LessonProgress.find_paginated_from_enrollments }.to raise_error ArgumentError
+          expect { Edools::LessonProgress.find_paginated_by_enrollment }.to raise_error ArgumentError
         end
       end
     end
   end
 
-  describe '.find_paginated_from_students' do
+  describe '.find_paginated_by_student' do
     context 'when valid params' do
       it 'succeeds' do
         VCR.use_cassette('lesson_progress/all_from_students_succeeds') do
-          result = Edools::LessonProgress.find_paginated_from_students(student_id: 6558938)
+          result = Edools::LessonProgress.find_paginated_by_student(student_id: 6558938)
 
           expect(result.lessons_progresses.count).to be 30
         end
@@ -46,7 +45,7 @@ RSpec.describe Edools::LessonProgress do
     context 'when enrollment doesn\'t exist' do
       it 'raises Edools::NotFound' do
         VCR.use_cassette('lesson_progress/all_from_students_not_found') do
-          expect { Edools::LessonProgress.find_paginated_from_students(student_id: 'test') }.to raise_error Edools::NotFound
+          expect { Edools::LessonProgress.find_paginated_by_student(student_id: 'test') }.to raise_error Edools::NotFound
         end
       end
     end
@@ -54,17 +53,17 @@ RSpec.describe Edools::LessonProgress do
     context 'when without params' do
       it 'raises ArgumentError' do
         VCR.use_cassette('enrollment/all_from_students_without_params') do
-          expect { Edools::LessonProgress.find_paginated_from_students }.to raise_error ArgumentError
+          expect { Edools::LessonProgress.find_paginated_by_student }.to raise_error ArgumentError
         end
       end
     end
   end
 
-  describe '.find_paginated_from_school_products' do
+  describe '.find_paginated_by_school_product' do
     context 'when valid params' do
       it 'succeeds' do
         VCR.use_cassette('lesson_progress/all_from_school_products_succeeds') do
-          result = Edools::LessonProgress.find_paginated_from_school_products(school_product_id: 73636)
+          result = Edools::LessonProgress.find_paginated_by_school_product(school_product_id: 73636)
 
           expect(result.lessons_progresses.count).to be 50
           expect(result.paginate.total_pages).to be 1526
@@ -76,7 +75,7 @@ RSpec.describe Edools::LessonProgress do
     context 'when enrollment doesn\'t exist' do
       it 'raises Edools::NotFound' do
         VCR.use_cassette('lesson_progress/all_from_school_products_not_found') do
-          expect { Edools::LessonProgress.find_paginated_from_school_products(school_product_id: 'test') }.to raise_error Edools::NotFound
+          expect { Edools::LessonProgress.find_paginated_by_school_product(school_product_id: 'test') }.to raise_error Edools::NotFound
         end
       end
     end
@@ -84,7 +83,7 @@ RSpec.describe Edools::LessonProgress do
     context 'when without params' do
       it 'raises ArgumentError' do
         VCR.use_cassette('enrollment/all_from_school_products_without_params') do
-          expect { Edools::LessonProgress.find_paginated_from_school_products }.to raise_error ArgumentError
+          expect { Edools::LessonProgress.find_paginated_by_school_product }.to raise_error ArgumentError
         end
       end
     end

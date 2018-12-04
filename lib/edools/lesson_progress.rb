@@ -4,12 +4,15 @@ module Edools
   class LessonProgress
     attr_reader :lesson_progress, :paginate, :errors
 
+    DEFAULT_PAGE = 1
+    DEFAULT_PER_PAGE = 50
+
     def initialize(data = {})
       @lesson_progress = objectify_lesson_progress(data)
       @errors = data.dig(:errors)
     end
 
-    def self.find_paginated_from_enrollments(enrollment_id: , page: 1, per_page: 50)
+    def self.find_paginated_by_enrollment(enrollment_id: , page: DEFAULT_PAGE, per_page: DEFAULT_PER_PAGE)
       raise ArgumentError, 'missing enrollment_id' if enrollment_id.nil?
 
       url = "#{base_url_enrollments}/#{enrollment_id}/lessons_progresses"
@@ -23,7 +26,7 @@ module Edools
       )
     end
 
-    def self.find_paginated_from_students(student_id: , page: 1, per_page: 50)
+    def self.find_paginated_by_student(student_id: , page: DEFAULT_PAGE, per_page: DEFAULT_PER_PAGE)
       raise ArgumentError, 'missing student_id' if student_id.nil?
 
       url = "#{base_url_students}/#{student_id}/lessons_progresses"
@@ -37,7 +40,7 @@ module Edools
       )
     end
 
-    def self.find_paginated_from_school_products(school_product_id: , page: 1, per_page: 50)
+    def self.find_paginated_by_school_product(school_product_id: , page: DEFAULT_PAGE, per_page: DEFAULT_PER_PAGE)
       raise ArgumentError, 'missing school_product_id' if school_product_id.nil?
 
       url = "#{base_url_school_products}/#{school_product_id}/lessons_progresses"
@@ -94,7 +97,7 @@ module Edools
     def self.objectify_lessons_progresses(lessons_progresses)
       lessons_progresses.map do |lesson_progress|
         objectify_lesson_progress(lesson_progress)
-      end
+      end.compact
     end
 
     def self.objectify_lesson_progress(lesson_progress)
