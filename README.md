@@ -117,6 +117,21 @@ result.paginate
 # => #<OpenStruct current_page=2, per_page=30, total_pages=2, total_count=60>
 ```
 
+Create a LessonProgress:
+```ruby
+data = {
+  enrollment_id: 2119734,
+  lesson_progress: {
+    lesson_id: 1161016,
+    completed: true,
+    progress: 100.0
+  }
+}
+
+Edools::LessonProgress.create(data)
+# => #<OpenStruct id=15173869, progress=100.0, completed=true, grade=nil, enrollment_id=2119734, exam_answer_ids=nil, time_spent=0, views=1, current_video_time=0, lesson=nil, lesson_id=1159126, school_id=1111, progress_card=nil, progress_card_id=nil, enrollment=nil, external_id=nil, last_view_at="2018-12-06T14:05:45.580Z", created_at="2018-12-06T14:05:45.580Z", updated_at="2018-12-06T14:05:45.580Z">
+```
+
 ### Course example
 
 ```ruby

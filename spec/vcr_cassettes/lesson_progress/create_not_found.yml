@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.com/enrollments/test/lessons_progresses
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryOS68BFMl5pqUMhfK\r\nContent-Disposition: form-data;
+        name=\"enrollment_id\"\r\n\r\ntest\r\n------RubyFormBoundaryOS68BFMl5pqUMhfK\r\nContent-Disposition:
+        form-data; name=\"lesson_progress[lesson_id]\"\r\n\r\n1161016\r\n------RubyFormBoundaryOS68BFMl5pqUMhfK\r\nContent-Disposition:
+        form-data; name=\"lesson_progress[completed]\"\r\n\r\ntrue\r\n------RubyFormBoundaryOS68BFMl5pqUMhfK\r\nContent-Disposition:
+        form-data; name=\"lesson_progress[progress]\"\r\n\r\n100.0\r\n------RubyFormBoundaryOS68BFMl5pqUMhfK--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '492'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryOS68BFMl5pqUMhfK
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 06 Dec 2018 14:22:41 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 404 Not Found
+      X-Request-Id:
+      - 0043d2b0-1926-4823-8ad0-22bf9a7d9c4f
+      X-Runtime:
+      - '0.012260'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Thu, 06 Dec 2018 14:22:41 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://core.myedools.com/enrollments/2119734/lessons_progresses
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryL0sAVNtkgbsNIHmO\r\nContent-Disposition: form-data;
+        name=\"enrollment_id\"\r\n\r\n2119734\r\n------RubyFormBoundaryL0sAVNtkgbsNIHmO\r\nContent-Disposition:
+        form-data; name=\"lesson_progress[lesson_id]\"\r\n\r\n1159126\r\n------RubyFormBoundaryL0sAVNtkgbsNIHmO\r\nContent-Disposition:
+        form-data; name=\"lesson_progress[completed]\"\r\n\r\ntrue\r\n------RubyFormBoundaryL0sAVNtkgbsNIHmO\r\nContent-Disposition:
+        form-data; name=\"lesson_progress[progress]\"\r\n\r\n100.0\r\n------RubyFormBoundaryL0sAVNtkgbsNIHmO--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '495'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryL0sAVNtkgbsNIHmO
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Thu, 06 Dec 2018 14:05:45 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 201 Created
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      X-Frame-Options:
+      - DENY
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Location:
+      - https://core.myedools.com/lessons_progresses/15173869
+      Etag:
+      - W/"0f6da1cb7915f3b6f9a87b118bde4e19"
+      X-Request-Id:
+      - 74ae0a97-6cd5-4bc3-bcec-b0c1223ed206
+      X-Runtime:
+      - '0.053197'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: UTF-8
+      string: '{"id":15173869,"progress":100.0,"completed":true,"grade":null,"enrollment_id":2119734,"lesson_id":1159126,"created_at":"2018-12-06T14:05:45.580Z","updated_at":"2018-12-06T14:05:45.580Z","external_id":null,"time_spent":0,"views":1,"last_view_at":"2018-12-06T14:05:45.580Z","school_id":1111,"progress_card_id":null,"current_video_time":0}'
+    http_version:
+  recorded_at: Thu, 06 Dec 2018 14:05:45 GMT
+recorded_with: VCR 3.0.3
