@@ -9,7 +9,7 @@ module Edools
     DEFAULT_PER_PAGE = 50
 
     def initialize(data = {})
-      @lesson_progress = objectify_lesson_progress(data)
+      @lesson_progress = objectify_lesson_progress(data) unless data.key?(:errors)
       @errors = data.dig(:errors)
     end
 
@@ -67,10 +67,12 @@ module Edools
       raise ArgumentError, 'missing lesson_progress' unless data.key? :lesson_progress
 
       url = "#{base_url_enrollments}/#{data[:enrollment_id]}/lessons_progresses"
-      response = Edools::ApiRequest.request(:post, url, data)
 
+      response = Edools::ApiRequest.request(:post, url, data)
       objectify_lesson_progress(response)
+
     rescue Edools::RequestWithErrors => exception
+      Edools.logger.error("#{exception.message}: #{exception.errors}")
       new exception.errors
     end
 
@@ -101,7 +103,7 @@ module Edools
         total_count: paginate.dig(:total_count)
       )
     rescue NoMethodError => error
-      puts Edools.logger.error(error)
+      Edools.logger.error(error)
     end
 
     def self.objectify_lessons_progresses(lessons_progresses)
@@ -134,7 +136,7 @@ module Edools
         updated_at: lesson_progress.dig(:updated_at)
       )
     rescue NoMethodError => error
-      puts Edools.logger.error(error)
+      Edools.logger.error(error)
     end
 
     def self.objectify_lesson(lesson = nil)

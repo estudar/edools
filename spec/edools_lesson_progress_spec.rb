@@ -106,6 +106,22 @@ RSpec.describe Edools::LessonProgress do
           expect(result.completed).to be true
         end
       end
+
+      it 'already in use' do
+        VCR.use_cassette('lesson_progress/create_return_already_in_use') do
+          data = {
+            enrollment_id: 2119734,
+            lesson_progress: {
+              lesson_id: 1161016,
+              completed: true,
+              progress: 100.0
+            }
+          }
+
+          result = Edools::LessonProgress.create(data)
+          expect(result.errors.dig(:enrollment_id)).to include "já está em uso"
+        end
+      end
     end
 
     context 'when enrollment doesn\'t exist' do
