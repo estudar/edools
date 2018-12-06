@@ -9,7 +9,7 @@ module Edools
     DEFAULT_PER_PAGE = 50
 
     def initialize(data = {})
-      @lesson_progress = objectify_lesson_progress(data) unless data.key?(:errors)
+      @lesson_progress = self.class.objectify_lesson_progress(data)
       @errors = data.dig(:errors)
     end
 
