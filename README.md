@@ -8,7 +8,7 @@ This is a basic gem to interact with the [Edools API](http://docs.edools.com/api
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'edools'
+gem 'edools', github: 'estudar/edools'
 ```
 
 And then execute:
@@ -17,7 +17,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install edools
+    $ git clone https://github.com/estudar/edools.git
+    $ cd edools
+    $ bundle
+    $ gem build edools.gemspec
+    $ ls *.gem | xargs gem install
 
 ## Configuration
 
