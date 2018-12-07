@@ -88,4 +88,65 @@ RSpec.describe Edools::LessonProgress do
       end
     end
   end
+
+  describe '.create' do
+    context 'when valid params' do
+      it 'succeeds' do
+        VCR.use_cassette('lesson_progress/create_valid') do
+          data = {
+            enrollment_id: 2119734,
+            lesson_progress: {
+              lesson_id: 1161016,
+              completed: true,
+              progress: 100.0
+            }
+          }
+
+          result = Edools::LessonProgress.create(data)
+          expect(result.completed).to be true
+        end
+      end
+
+      it 'already in use' do
+        VCR.use_cassette('lesson_progress/create_return_already_in_use') do
+          data = {
+            enrollment_id: 2119734,
+            lesson_progress: {
+              lesson_id: 1161016,
+              completed: true,
+              progress: 100.0
+            }
+          }
+
+          result = Edools::LessonProgress.create(data)
+          expect(result.errors.dig(:enrollment_id)).to include "já está em uso"
+        end
+      end
+    end
+
+    context 'when enrollment doesn\'t exist' do
+      it 'raises Edools::NotFound' do
+        VCR.use_cassette('lesson_progress/create_not_found') do
+          data = {
+            enrollment_id: 'test',
+            lesson_progress: {
+              lesson_id: 1161016,
+              completed: true,
+              progress: 100.0
+            }
+          }
+
+          expect { Edools::LessonProgress.create(data) }.to raise_error Edools::NotFound
+        end
+      end
+    end
+
+    context 'when without params' do
+      it 'raises ArgumentError' do
+        VCR.use_cassette('lesson_progress/create_without_params') do
+          expect { Edools::LessonProgress.create }.to raise_error ArgumentError
+        end
+      end
+    end
+  end
 end

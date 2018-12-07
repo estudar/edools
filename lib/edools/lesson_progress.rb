@@ -9,7 +9,7 @@ module Edools
     DEFAULT_PER_PAGE = 50
 
     def initialize(data = {})
-      @lesson_progress = objectify_lesson_progress(data)
+      @lesson_progress = self.class.objectify_lesson_progress(data)
       @errors = data.dig(:errors)
     end
 
@@ -62,6 +62,20 @@ module Edools
       end
     end
 
+    def self.create(data = {})
+      raise ArgumentError, 'missing enrollment_id' unless data.key? :enrollment_id
+      raise ArgumentError, 'missing lesson_progress' unless data.key? :lesson_progress
+
+      url = "#{base_url_enrollments}/#{data[:enrollment_id]}/lessons_progresses"
+
+      response = Edools::ApiRequest.request(:post, url, data)
+      objectify_lesson_progress(response)
+
+    rescue Edools::RequestWithErrors => exception
+      Edools.logger.error("#{exception.message}: #{exception.errors}")
+      new exception.errors
+    end
+
     def self.base_url_enrollments
       "#{Edools.base_url}/enrollments"
     end
@@ -89,7 +103,7 @@ module Edools
         total_count: paginate.dig(:total_count)
       )
     rescue NoMethodError => error
-      puts Edools.logger.error(error)
+      Edools.logger.error(error)
     end
 
     def self.objectify_lessons_progresses(lessons_progresses)
@@ -111,13 +125,18 @@ module Edools
         views: lesson_progress.dig(:views),
         current_video_time: lesson_progress.dig(:current_video_time),
         lesson: objectify_lesson(lesson_progress.dig(:lesson)),
+        lesson_id: lesson_progress.dig(:lesson_id),
+        school_id: lesson_progress.dig(:school_id),
         progress_card: objectify_progress_card(lesson_progress.dig(:progress_card)),
+        progress_card_id: lesson_progress.dig(:progress_card_id),
         enrollment: objectify_enrollment(lesson_progress.dig(:enrollment)),
+        external_id: lesson_progress.dig(:external_id),
+        last_view_at: lesson_progress.dig(:last_view_at),
         created_at: lesson_progress.dig(:created_at),
         updated_at: lesson_progress.dig(:updated_at)
       )
     rescue NoMethodError => error
-      puts Edools.logger.error(error)
+      Edools.logger.error(error)
     end
 
     def self.objectify_lesson(lesson = nil)
