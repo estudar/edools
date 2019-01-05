@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'syslog/logger'
-require 'pry'
 require 'edools/version'
 require 'edools/utils'
 require 'edools/api_request'
