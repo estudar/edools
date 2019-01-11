@@ -98,7 +98,8 @@ RSpec.describe Edools::LessonProgress do
             lesson_progress: {
               lesson_id: 1161016,
               completed: true,
-              progress: 100.0
+              progress: 100.0,
+              course_id: 22140
             }
           }
 
@@ -114,7 +115,8 @@ RSpec.describe Edools::LessonProgress do
             lesson_progress: {
               lesson_id: 1161016,
               completed: true,
-              progress: 100.0
+              progress: 100.0,
+              course_id: 22140
             }
           }
 
@@ -132,7 +134,8 @@ RSpec.describe Edools::LessonProgress do
             lesson_progress: {
               lesson_id: 1161016,
               completed: true,
-              progress: 100.0
+              progress: 100.0,
+              course_id: 22140
             }
           }
 
