@@ -64,6 +64,7 @@ module Edools
 
     def self.create(data = {})
       raise ArgumentError, 'missing enrollment_id' unless data.key? :enrollment_id
+      raise ArgumentError, 'missing course_id' unless data.key? :course_id
       raise ArgumentError, 'missing lesson_progress' unless data.key? :lesson_progress
 
       url = "#{base_url_enrollments}/#{data[:enrollment_id]}/lessons_progresses"
