@@ -125,11 +125,11 @@ Create a LessonProgress:
 ```ruby
 data = {
   enrollment_id: 2119734,
+  course_id: 22140,
   lesson_progress: {
     lesson_id: 1161016,
     completed: true,
-    progress: 100.0,
-    course_id: 22140
+    progress: 100.0
   }
 }
 

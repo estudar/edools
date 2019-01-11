@@ -95,11 +95,11 @@ RSpec.describe Edools::LessonProgress do
         VCR.use_cassette('lesson_progress/create_valid') do
           data = {
             enrollment_id: 2119734,
+            course_id: 22140,
             lesson_progress: {
               lesson_id: 1161016,
               completed: true,
-              progress: 100.0,
-              course_id: 22140
+              progress: 100.0
             }
           }
 
@@ -112,11 +112,11 @@ RSpec.describe Edools::LessonProgress do
         VCR.use_cassette('lesson_progress/create_return_already_in_use') do
           data = {
             enrollment_id: 2119734,
+            course_id: 22140,
             lesson_progress: {
               lesson_id: 1161016,
               completed: true,
-              progress: 100.0,
-              course_id: 22140
+              progress: 100.0
             }
           }
 
@@ -131,11 +131,11 @@ RSpec.describe Edools::LessonProgress do
         VCR.use_cassette('lesson_progress/create_not_found') do
           data = {
             enrollment_id: 'test',
+            course_id: 22140,
             lesson_progress: {
               lesson_id: 1161016,
               completed: true,
-              progress: 100.0,
-              course_id: 22140
+              progress: 100.0
             }
           }
 
@@ -148,6 +148,44 @@ RSpec.describe Edools::LessonProgress do
       it 'raises ArgumentError' do
         VCR.use_cassette('lesson_progress/create_without_params') do
           expect { Edools::LessonProgress.create }.to raise_error ArgumentError
+        end
+      end
+
+      it 'raises ArgumentError without enrollment_id to payload data' do
+        VCR.use_cassette('lesson_progress/create_without_params') do
+          data = {
+            course_id: 22140,
+            lesson_progress: {
+              lesson_id: 1161016,
+              completed: true,
+              progress: 100.0
+            }
+          }
+          expect { Edools::LessonProgress.create(data) }.to raise_error ArgumentError
+        end
+      end
+
+      it 'raises ArgumentError without course_id to payload data' do
+        VCR.use_cassette('lesson_progress/create_without_params') do
+          data = {
+            enrollment_id: 'test',
+            lesson_progress: {
+              lesson_id: 1161016,
+              completed: true,
+              progress: 100.0
+            }
+          }
+          expect { Edools::LessonProgress.create(data) }.to raise_error ArgumentError
+        end
+      end
+
+      it 'raises ArgumentError without lesson_progress to payload data' do
+        VCR.use_cassette('lesson_progress/create_without_params') do
+          data = {
+            enrollment_id: 'test',
+            course_id: 22140
+          }
+          expect { Edools::LessonProgress.create(data) }.to raise_error ArgumentError
         end
       end
     end
