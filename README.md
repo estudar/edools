@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/estudar/edools.svg?style=svg)](https://circleci.com/gh/estudar/edools)
 # Edools
 
-This is a basic gem to interact with the [Edools API](http://docs.edools.com/api/).
+This is a basic gem to interact with the [Edools API](http://docs.edools.com/api/)
 
 ## Installation
 
