@@ -121,7 +121,7 @@ RSpec.describe Edools::LessonProgress do
           }
 
           result = Edools::LessonProgress.create(data)
-          expect(result.errors.dig(:enrollment_id)).to include "já está em uso"
+          expect(result.errors.fetch(:enrollment_id, nil)).to include "já está em uso"
         end
       end
     end
