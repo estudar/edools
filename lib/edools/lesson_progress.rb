@@ -10,7 +10,7 @@ module Edools
 
     def initialize(data = {})
       @lesson_progress = self.class.objectify_lesson_progress(data)
-      @errors = data.dig(:errors)
+      @errors = data.fetch(:errors, nil)
     end
 
     def self.find_paginated_by_enrollment(enrollment_id: , page: DEFAULT_PAGE, per_page: DEFAULT_PER_PAGE)
@@ -98,10 +98,10 @@ module Edools
     def self.objectify_paginate(paginate)
       return paginate if paginate.nil?
       OpenStruct.new(
-        current_page: paginate.dig(:current_page),
-        per_page: paginate.dig(:per_page),
-        total_pages: paginate.dig(:total_pages),
-        total_count: paginate.dig(:total_count)
+        current_page: paginate.fetch(:current_page, nil),
+        per_page: paginate.fetch(:per_page, nil),
+        total_pages: paginate.fetch(:total_pages, nil),
+        total_count: paginate.fetch(:total_count, nil)
       )
     rescue NoMethodError => error
       Edools.logger.error(error)
@@ -116,25 +116,25 @@ module Edools
     def self.objectify_lesson_progress(lesson_progress)
       return lesson_progress if lesson_progress.nil?
       OpenStruct.new(
-        id: lesson_progress.dig(:id),
-        progress: lesson_progress.dig(:progress),
-        completed: lesson_progress.dig(:completed),
-        grade: lesson_progress.dig(:grade),
-        enrollment_id: lesson_progress.dig(:enrollment_id),
-        exam_answer_ids: lesson_progress.dig(:exam_answer_ids),
-        time_spent: lesson_progress.dig(:time_spent),
-        views: lesson_progress.dig(:views),
-        current_video_time: lesson_progress.dig(:current_video_time),
-        lesson: objectify_lesson(lesson_progress.dig(:lesson)),
-        lesson_id: lesson_progress.dig(:lesson_id),
-        school_id: lesson_progress.dig(:school_id),
-        progress_card: objectify_progress_card(lesson_progress.dig(:progress_card)),
-        progress_card_id: lesson_progress.dig(:progress_card_id),
-        enrollment: objectify_enrollment(lesson_progress.dig(:enrollment)),
-        external_id: lesson_progress.dig(:external_id),
-        last_view_at: lesson_progress.dig(:last_view_at),
-        created_at: lesson_progress.dig(:created_at),
-        updated_at: lesson_progress.dig(:updated_at)
+        id: lesson_progress.fetch(:id, nil),
+        progress: lesson_progress.fetch(:progress, nil),
+        completed: lesson_progress.fetch(:completed, nil),
+        grade: lesson_progress.fetch(:grade, nil),
+        enrollment_id: lesson_progress.fetch(:enrollment_id, nil),
+        exam_answer_ids: lesson_progress.fetch(:exam_answer_ids, nil),
+        time_spent: lesson_progress.fetch(:time_spent, nil),
+        views: lesson_progress.fetch(:views, nil),
+        current_video_time: lesson_progress.fetch(:current_video_time, nil),
+        lesson: objectify_lesson(lesson_progress.fetch(:lesson, nil)),
+        lesson_id: lesson_progress.fetch(:lesson_id, nil),
+        school_id: lesson_progress.fetch(:school_id, nil),
+        progress_card: objectify_progress_card(lesson_progress.fetch(:progress_card, nil)),
+        progress_card_id: lesson_progress.fetch(:progress_card_id, nil),
+        enrollment: objectify_enrollment(lesson_progress.fetch(:enrollment, nil)),
+        external_id: lesson_progress.fetch(:external_id, nil),
+        last_view_at: lesson_progress.fetch(:last_view_at, nil),
+        created_at: lesson_progress.fetch(:created_at, nil),
+        updated_at: lesson_progress.fetch(:updated_at, nil)
       )
     rescue NoMethodError => error
       Edools.logger.error(error)
@@ -143,26 +143,26 @@ module Edools
     def self.objectify_lesson(lesson = nil)
       return lesson if lesson.nil?
       OpenStruct.new(
-        id: lesson.dig(:id),
-        type: lesson.dig(:type),
-        title: lesson.dig(:title)
+        id: lesson.fetch(:id, nil),
+        type: lesson.fetch(:type, nil),
+        title: lesson.fetch(:title, nil)
       )
     end
 
     def self.objectify_progress_card(progress_card = nil)
       return progress_card if progress_card.nil?
       OpenStruct.new(
-        course_name: progress_card.dig(:course, :name)
+        course_name: progress_card.fetch(:course, {}).fetch(:name, nil)
       )
     end
 
     def self.objectify_enrollment(enrollment = nil)
       return enrollment if enrollment.nil?
       OpenStruct.new(
-        id: enrollment.dig(:id),
-        student_first_name: enrollment.dig(:student, :first_name),
-        student_last_name: enrollment.dig(:student, :last_name),
-        student_cover_image_url: enrollment.dig(:student, :cover_image_url)
+        id: enrollment.fetch(:id, nil),
+        student_first_name: enrollment.fetch(:student, {}).fetch(:first_name, nil),
+        student_last_name: enrollment.fetch(:student, {}).fetch(:last_name, nil),
+        student_cover_image_url: enrollment.fetch(:student, {}).fetch(:cover_image_url, nil)
       )
     end
   end

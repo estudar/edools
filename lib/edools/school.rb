@@ -5,10 +5,10 @@ module Edools
     attr_reader :id, :name, :subdomain, :credentials, :errors
 
     def initialize(data = {})
-      @id = data.dig :school, :id
-      @name = data.dig :school, :name
-      @subdomain = data.dig :school, :subdomain
-      @credentials = data.dig :admin, :credentials
+      @id = data.fetch(:school, {}).fetch(:id, nil)
+      @name = data.fetch(:school, {}).fetch(:name, nil)
+      @subdomain = data.fetch(:school, {}).fetch(:subdomain, nil)
+      @credentials = data.fetch(:admin, {}).fetch(:credentials, nil)
       @errors = data[:errors]
     end
 
