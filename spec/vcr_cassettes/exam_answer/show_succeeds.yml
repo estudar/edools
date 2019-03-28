@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.myedools.com/exam_answers/1196779
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryvw2TTI4RcdcAQsGx\r\nContent-Disposition: form-data;
+        name=\"id\"\r\n\r\n1196779\r\n------RubyFormBoundaryvw2TTI4RcdcAQsGx--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '136'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryvw2TTI4RcdcAQsGx
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Mar 2019 21:44:04 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631152000; includeSubdomains
+      X-Frame-Options:
+      - DENY
+      Content-Security-Policy-Report-Only:
+      - default-src https://* 'self'; connect-src https://* 'self'; font-src https://*
+        'self'; frame-src https://* 'self'; img-src https://* 'self' data:; media-src
+        https://* 'self'; object-src https://* 'self'; script-src https://* 'self';
+        style-src https://* 'self'; report-uri https://core.edools.com/uri-directive;
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Etag:
+      - W/"4291c3be5ab6e9a3c62c0c5bb6dc146e"
+      X-Request-Id:
+      - 96fb5552-7241-4a68-b844-b90c63d81e19
+      X-Runtime:
+      - '0.494953'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: UTF-8
+      string: '{"id":1196779,"activity_id":30434,"lesson_progress_id":14286269,"score":0.0,"s3_files":[],"collaborator_id":null,"auto_corrected":false,"comment":null,"student":{"id":6513784,"first_name":"foobar","last_name":"silva","cover_image_url":"https://cdn.edools.com/assets/images/users/default.jpeg"},"corrected_at":null,"created_at":"2019-03-26T21:22:01.800Z","updated_at":"2019-03-26T21:22:01.800Z","exam_question_answers":[{"id":10340521,"multiple_choice_option_id":null,"correct":null,"comment":null,"text":"<p>resposta
+        da primeira questao</p>\r\n","score":0.0,"associative_options":[],"exam_question":{"id":214233,"title":"<p>Oi
+        vamos por uma resposta</p>\n","point":1,"comment":null,"type":"DiscursiveExamQuestion","order":1,"library_resources":[]}},{"id":10340522,"multiple_choice_option_id":null,"correct":null,"comment":null,"text":"<p>resposta
+        da segunda questao</p>\r\n","score":0.0,"associative_options":[],"exam_question":{"id":215861,"title":"<p>foobar</p>\n","point":1,"comment":null,"type":"DiscursiveExamQuestion","order":2,"library_resources":[]}}]}'
+    http_version:
+  recorded_at: Thu, 28 Mar 2019 21:44:12 GMT
+recorded_with: VCR 3.0.3
