@@ -137,6 +137,16 @@ Edools::LessonProgress.create(data)
 # => #<OpenStruct id=15173869, progress=100.0, completed=true, grade=nil, enrollment_id=2119734, exam_answer_ids=nil, time_spent=0, views=1, current_video_time=0, lesson=nil, lesson_id=1159126, school_id=1111, progress_card=nil, progress_card_id=nil, enrollment=nil, external_id=nil, last_view_at="2018-12-06T14:05:45.580Z", created_at="2018-12-06T14:05:45.580Z", updated_at="2018-12-06T14:05:45.580Z">
 ```
 
+### ExamAsnwer example
+
+```ruby
+result = Edools::ExamAnswer.show(id: 1196779)
+=> #<Edools::ExamAnswer:0x0055cbc166d090 @exam_answer=#<OpenStruct id=1196779, lesson_progress_id=14286269, activity_id=30434, collaborator_id=nil, auto_corrected=false, score=0.0, comment=nil, s3_files=[], student=#<OpenStruct id=6513784, first_name="foobar", last_name="silva", cover_image_url="https://cdn.edools.com/assets/images/users/default.jpeg">, exam_question_answers=[#<OpenStruct id=10340521, exam_question=#<OpenStruct id=214233, order=1, point=1, type="DiscursiveExamQuestion", title="<p>Oi vamos por uma resposta</p>\n", library_resources=[], comment=nil>, score=0.0, correct=nil, multiple_choice_option_id=nil, text="<p>resposta da primeira questao</p>\r\n", comment=nil, associative_options=[]>, #<OpenStruct id=10340522, exam_question=#<OpenStruct id=215861, order=2, point=1, type="DiscursiveExamQuestion", title="<p>foobar</p>\n", library_resources=[], comment=nil>, score=0.0, correct=nil, multiple_choice_option_id=nil, text="<p>resposta da segunda questao</p>\r\n", comment=nil, associative_options=[]>], corrected_at=nil, created_at="2019-03-26T21:22:01.800Z", updated_at="2019-03-26T21:22:01.800Z">, @errors=nil>
+
+result.exam_answer[:id]
+=> 1196779
+```
+
 ### Course example
 
 ```ruby

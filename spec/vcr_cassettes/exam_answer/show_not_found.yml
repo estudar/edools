@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://core.myedools.com/exam_answers/test
+    body:
+      encoding: ASCII-8BIT
+      string: "------RubyFormBoundaryC6Hvj98iVBMwjK0S\r\nContent-Disposition: form-data;
+        name=\"id\"\r\n\r\ntest\r\n------RubyFormBoundaryC6Hvj98iVBMwjK0S--\r\n"
+    headers:
+      Accept:
+      - application/vnd.edools.core.v1+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.4.1p111
+      Authorization:
+      - Token token="e20c3d8a4c6f1c3da2a90704e87b6291:9a960117fe097dbf1d2eb8a5b30c3185"
+      Content-Length:
+      - '133'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryC6Hvj98iVBMwjK0S
+      Host:
+      - core.myedools.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 28 Mar 2019 21:34:20 GMT
+      Content-Type:
+      - application/vnd.edools.core.v1+json; charset=utf-8
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Status:
+      - 404 Not Found
+      X-Request-Id:
+      - 48e6cae9-650b-4dc7-b977-cbf750c6a5a9
+      X-Runtime:
+      - '0.014821'
+      X-Gocache-Cachestatus:
+      - BYPASS
+      Server:
+      - gocache
+    body:
+      encoding: UTF-8
+      string: '{"status":"404","error":"Not Found"}'
+    http_version:
+  recorded_at: Thu, 28 Mar 2019 21:34:26 GMT
+recorded_with: VCR 3.0.3

@@ -14,6 +14,7 @@ require 'edools/session'
 require 'edools/media'
 require 'edools/enrollment'
 require 'edools/lesson_progress'
+require 'edools/exam_answer'
 
 module Edools
   class RequestFailed < StandardError
