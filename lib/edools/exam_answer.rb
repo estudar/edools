@@ -99,31 +99,44 @@ module Edools
 
     def self.objectify_exam_question(exam_question = nil)
       return exam_question if exam_question.nil?
-      OpenStruct.new(
-        id: exam_question.fetch(:id, nil),
-        order: exam_question.fetch(:order, nil),
-        point: exam_question.fetch(:point, nil),
-        type: exam_question.fetch(:type, nil),
-        title: exam_question.fetch(:title, nil),
-        library_resources: objectify_library_resources(exam_question.fetch(:library_resources, nil)),
-        comment: exam_question.fetch(:comment, nil)
-      )
+      if exam_question.key?(:multiple_choice_options)
+        OpenStruct.new(
+          id: exam_question.fetch(:id, nil),
+          order: exam_question.fetch(:order, nil),
+          point: exam_question.fetch(:point, nil),
+          type: exam_question.fetch(:type, nil),
+          title: exam_question.fetch(:title, nil),
+          multiple_choice_options: objectify_multiple_choice_options(exam_question.fetch(:multiple_choice_options, nil)),
+          library_resources: exam_question.fetch(:library_resources, nil),
+          comment: exam_question.fetch(:comment, nil)
+        )
+      else
+        OpenStruct.new(
+          id: exam_question.fetch(:id, nil),
+          order: exam_question.fetch(:order, nil),
+          point: exam_question.fetch(:point, nil),
+          type: exam_question.fetch(:type, nil),
+          title: exam_question.fetch(:title, nil),
+          library_resources: exam_question.fetch(:library_resources, nil),
+          comment: exam_question.fetch(:comment, nil)
+        )
+      end
     rescue NoMethodError => error
       Edools.logger.error(error)
     end
 
-    def self.objectify_library_resources(library_resources)
-      library_resources.map do |library_resource|
-        objectify_library_resource(library_resource)
+    def self.objectify_multiple_choice_options(multiple_choice_options)
+      multiple_choice_options.map do |multiple_choice_option|
+        objectify_multiple_choice_option(multiple_choice_option)
       end.compact
     end
 
-    def self.objectify_library_resource(library_resource = nil)
-      return library_resource if library_resource.nil?
+    def self.objectify_multiple_choice_option(multiple_choice_option = nil)
+      return multiple_choice_option if multiple_choice_option.nil?
       OpenStruct.new(
-        id: library_resource.fetch(:id, nil),
-        title: library_resource.fetch(:title, nil),
-        correct: library_resource.fetch(:correct, nil)
+        id: multiple_choice_option.fetch(:id, nil),
+        title: multiple_choice_option.fetch(:title, nil),
+        correct: multiple_choice_option.fetch(:correct, nil)
       )
     rescue NoMethodError => error
       Edools.logger.error(error)
